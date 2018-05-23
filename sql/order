@@ -1,0 +1,32 @@
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS `order`;
+
+CREATE TABLE `order` (
+  `id`            INT(11)      NOT NULL AUTO_INCREMENT
+  COMMENT '主键',
+  `order_num`     VARCHAR(32)  NOT NULL
+  COMMENT '订单编号',
+  `buyer_id`      INT(11)      NOT NULL
+  COMMENT '买家id',
+  `seller_id`     INT(11)      NOT NULL
+  COMMENT '商家id',
+  `product_id`    INT(11)      NOT NULL
+  COMMENT '商品id',
+  `quantity`      INT          NOT NULL
+  COMMENT '购买的数量',
+  `price`         FLOAT        NOT NULL
+  COMMENT '花费',
+  `receiving_add` VARCHAR(256) NOT NULL
+  COMMENT '收货地址',
+  `delivery_add`  VARCHAR(256) NOT NULL
+  COMMENT '发货地址',
+  `has_complete`  TINYINT      NOT NULL DEFAULT 0
+  COMMENT '标志订单是否完成 0 未完成，1 已完成',
+
+  `add_time`      DATETIME     NOT NULL,
+  `update_time`   TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  INDEX `use_id` (`buyer_id`, `seller_id`)
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;

@@ -1,0 +1,144 @@
+.pub-menu-new > .drop-down-menu > ul > li > ul.one-li-new > li.one-9 > ul > li > a.four-bold,
+.pub-menu-new > .drop-down-menu > ul > li > ul.one-li-new > li.one-9.no > ul > li > b > a.four-bold {
+    font-weight: bold;
+    color: #000;
+    width: 100%;
+    display: block;
+}
+
+/*设置页面上端的横标题*/
+.article > .l > .sub-menu > a.foc1,
+.pub-menu-new > .drop-down-menu > ul > li > ul.sub-menu-two > li > a.foc1 {
+    color: #ff6c00 !important;
+    text-decoration: underline;
+}
+
+.pub-menu-new > .drop-down-menu > ul > li > ul.sub-menu-two > li > a.foc1 {
+    color: #ff6c00 !important;
+    text-decoration: underline;
+}
+
+.pub-menu-new > .drop-down-menu > ul > li.block > a.foc1 {
+    color: #ff3300 !important;
+}
+.pub-menu-new>.drop-down-menu>ul>li>a.sub.home {
+    margin-left:5cm;
+}
+.pub-menu-new>.drop-down-menu>ul>li>a.sub.buyer {
+    margin-left:2cm;
+}
+.pub-menu-new>.drop-down-menu>ul>li>a.sub.seller {
+    margin-left:2cm;
+}
+.pub-menu-new>.drop-down-menu>ul>li>a.sub.local {
+    margin-left:2cm;
+}
+
+.fxr.phone {
+    display: none;
+}
+
+/*.pub-menu-new > .drop-down-menu > ul > li > a.sub {*/
+    /*line-height: 70px;*/
+    /*width: 166px;*/
+    /*padding: 0px;*/
+    /*font-size: 18px;*/
+/*}*/
+
+/*.pub-menu-new > .drop-down-menu > ul > li > ul.sub-menu-two {*/
+    /*background: rgba(220, 220, 220, .9);*/
+    /*padding: 15px;*/
+    /*z-index: 999;*/
+    /*left: -130px;*/
+/*}*/
+
+/*.pub-menu-new > .drop-down-menu > ul > li > ul.sub-menu-two.information {*/
+    /*width: 400px;*/
+/*}*/
+
+/*.pub-menu-new > .drop-down-menu > ul > li > ul.sub-menu-two.information > li {*/
+    /*width: 100%;*/
+    /*display: block;*/
+/*}*/
+
+/*.pub-menu-new > .drop-down-menu > ul > li > ul.sub-menu-two.information > li > a {*/
+    /*width: 24%;*/
+    /*padding: 10px 0px;*/
+    /*display: inline-block;*/
+    /*margin: 0px;*/
+    /*text-align: center;*/
+/*}*/
+
+/*.pub-menu-new > .drop-down-menu > ul > li > ul.sub-menu-two.information > li > a.two {*/
+    /*width: 11.5%;*/
+/*}*/
+
+/*.pub-menu-new > .drop-down-menu > ul > li > ul.sub-menu-two.information > li > a.two.foc12 {*/
+    /*text-align: right;*/
+/*}*/
+
+/*.pub-menu-new > .drop-down-menu > ul > li > ul.sub-menu-two.information > li > a.two.foc47 {*/
+    /*text-align: left;*/
+/*}*/
+
+/*.pub-menu-new > .drop-down-menu > ul > li > ul.sub-menu-two.information.three {*/
+    /*width: 350px;*/
+    /*left: -100px;*/
+/*}*/
+
+/*.pub-menu-new > .drop-down-menu > ul > li > ul.sub-menu-two.information.three.end {*/
+    /*left: auto;*/
+    /*right: 0px;*/
+/*}*/
+
+/*.pub-menu-new > .drop-down-menu > ul > li > ul.sub-menu-two.information.three > li > a {*/
+    /*width: 31%;*/
+/*}*/
+
+/*.pub-menu-new > .drop-down-menu > ul > li > ul.sub-menu-two.information.one {*/
+    /*width: 130px;*/
+    /*left: 10px;*/
+/*}*/
+
+/*.pub-menu-new > .drop-down-menu > ul > li > ul.sub-menu-two.information.one > li > a {*/
+    /*width: 100%;*/
+/*}*/
+
+/*.pub-menu-new > .drop-down-menu > ul > li.hover > a.sub {*/
+    /*color: #ff3300 !important;*/
+    /*text-decoration: underline;*/
+/*}*/
+
+/*
+
+.logo-article {
+    display: none;
+}
+
+.logo-all {
+    display: block;
+}
+
+.top-btn {
+    display: inline-block;
+    border: 1px solid #ddd;
+    padding: 0px 12px;
+    height: 26px;
+    line-height: 26px;
+    color: #487ebc;
+    margin: 8px;
+    font-size: 13px;
+}
+
+.top-btn.orange {
+    color: #d1942a;
+}*/
+
+/*.li01 ul li a {
+    float: left;
+    width: 140px;
+}
+
+.li-list-line.auto-scroll ul li a {
+    width: 300px;
+}*/

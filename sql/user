@@ -1,0 +1,32 @@
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS `user`;
+
+CREATE TABLE `user` (
+  `id`          INT(11)      NOT NULL AUTO_INCREMENT
+  COMMENT '主键',
+  `name`        VARCHAR(32)  NOT NULL
+  COMMENT '用户名',
+  `real_name`   VARCHAR(32)  NULL
+  COMMENT '用户真实姓名',
+  `gender`      VARCHAR(4)   NOT NULL
+  COMMENT '用户性别',
+  `password`    VARCHAR(500) NOT NULL
+  COMMENT '密码',
+  `phone`       VARCHAR(11)  NULL
+  COMMENT '用户电话',
+  `address`     VARCHAR(500) NULL
+  COMMENT '用户住址',
+  `email`       VARCHAR(32)  NULL
+  COMMENT '用户邮箱',
+  `authority`   TINYINT(2)   NOT NULL
+  COMMENT '用户权限,0 管理员  1 专家  2 商家  3 普通用户',
+  `has_del`     TINYINT(1)   NOT NULL DEFAULT 0
+  COMMENT '用户是否删除 0 未删除  1删除',
+
+  `add_time`    DATETIME     NOT NULL,
+  `update_time` TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  INDEX `name_phone` (`name`, `phone`)
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;

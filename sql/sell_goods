@@ -1,0 +1,26 @@
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS `sell_goods`;
+
+CREATE TABLE `sell_goods` (
+  `id`          INT(11)    NOT NULL AUTO_INCREMENT
+  COMMENT '主键',
+  `store_id`    INT(11)    NOT NULL
+  COMMENT '商家id',
+  `goods_id`    INT(11)    NOT NULL
+  COMMENT '商品对应的id',
+  `price`       FLOAT      NOT NULL
+  COMMENT '商品价格',
+  `quantity`    INT        NOT NULL
+  COMMENT '商品数量',
+  `pic`         LONGBLOB   NOT NULL
+  COMMENT '商品对应的图片',
+  `has_cancel`  TINYINT(1) NOT NULL DEFAULT 0
+  COMMENT '商品是否下架 0 未删除  1删除',
+
+  `add_time`    DATETIME   NOT NULL,
+  `update_time` TIMESTAMP  NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  INDEX `use_id` (`goods_id`, `store_id`)
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;

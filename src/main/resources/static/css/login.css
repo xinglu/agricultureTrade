@@ -1,0 +1,170 @@
+body {
+    background: #f7f7f7;
+}
+
+body, img, p, form {
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-size: 14px;
+    line-height: 22px;
+    font-family: "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+}
+
+input {
+    font-family: Arial, Helvetica, sans-serif
+}
+
+input {
+    outline: none;
+    font-size: 14px;
+}
+
+a {
+    color: #5f6d1f;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FF0066;
+    text-decoration: underline;
+}
+
+.login {
+    max-width: 320px;
+    margin: 3% auto 0;
+    background: #fff;
+    border-radius: 12px;
+    padding: 0 60px 40px
+}
+
+.logo {
+    text-align: center;
+    padding: 30px 40px 10px 0;
+}
+
+.al {
+    font-size: 18px;
+    color: #333;
+    padding-bottom: 10px
+}
+
+.inpbox {
+    height: 42px;
+    border: 1px solid #d5d5d5;
+    border-radius: 4px;
+    margin: 10px 0;
+    position: relative
+}
+
+.tishi {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: url(https://lgpic.com/images/ico_login.png) no-repeat 0 0;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    padding-right: 8px;
+    border-right: 1px solid #efefef;
+}
+
+.tishi_pwd {
+    background: url(https://lgpic.com/images/ico_login.png) no-repeat 0 -60px;
+}
+
+.tishi_vcode {
+    background: url(https://lgpic.com/images/ico_login.png) no-repeat 0 -120px;
+}
+
+.intxt {
+    width: 255px;
+    font-size: 18px;
+    position: absolute;
+    left: 40px;
+    top: 1;
+    border: none;
+    padding: 10px;
+}
+
+.bt {
+    width: 100%;
+    padding: 10px 0;
+    background: #7add4f;
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 0;
+    margin: 10px auto;
+    font-family: "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+}
+
+.bt:hover {
+    background: #aed10a;
+}
+
+.error {
+    font-size: 12px;
+    color: #ff560c;
+    padding: 3px 0 0 23px;
+    background: url(https://lgpic.com/images/user/ico_reg.png) no-repeat 0 -47px
+}
+
+.footer {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 80px;
+    padding: 10px;
+    border-top: 1px solid #efefef;
+}
+
+a.qq {
+    display: block;
+    width: 100px;
+    height: 25px;
+    font-size: 14px;
+    background: url(https://lgpic.com/images/qq.png) no-repeat;
+    padding-left: 25px;
+    line-height: 25px
+}
+
+a.qq:hover {
+    background: url(https://lgpic.com/images/qq.png) no-repeat 0 -41px;
+    text-decoration: none;
+}
+
+a.reg {
+    width: 295px;
+    padding: 8px 10px;
+    display: block;
+    background: #c3d99b;
+    border: 2px solid #c3d99b;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+a.reg:hover {
+    background: #b6d985;
+    text-decoration: none;
+}
+
+a.qqlogin {
+    display: inline-block;
+    width: 3.6em;
+    height: 3.6em;
+    background: url(https://m.lvguo.net/static/img/loginbtn_qq.png) no-repeat;
+    background-size: 3.6em;
+}
+
+a.wxlogin {
+    display: inline-block;
+    width: 3.7em;
+    height: 3.6em;
+    background: url(https://m.lvguo.net/static/img/loginbtn_wx.png) no-repeat;
+    background-size: 3.6em;
+}

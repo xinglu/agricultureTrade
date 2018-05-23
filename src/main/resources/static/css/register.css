@@ -1,0 +1,161 @@
+body {
+    background: #f7f7f7;
+}
+
+body, img, p, form {
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-family: "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+}
+
+input, select {
+    outline: none;
+    font-size: 18px;
+    vertical-align: middle;
+    font-family: "Microsoft YaHei", "微软雅黑";
+}
+
+label {
+    cursor: pointer;
+    font-size: 16px;
+}
+
+select {
+    font-size: 16px;
+    padding: 6px;
+    margin: 0 0 2px;
+    border-color: #ccc;
+    cursor: pointer;
+    border-radius: 3px;
+    max-width: 120px
+}
+
+a {
+    color: #5f6d1f;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FF0066;
+    text-decoration: underline;
+}
+
+.mw {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.login {
+    width: 320px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    padding: 40px 120px
+}
+
+.logo {
+    margin: 10px 0
+}
+
+.main {
+    width: 900px;
+    margin: 10px auto;
+    background: #fff;
+    border-radius: 3px;
+    padding: 40px
+}
+
+.al {
+    font-size: 19px;
+    color: #333;
+    padding-bottom: 20px;
+    margin-left: 30px;
+    line-height: 45px
+}
+
+.intxt {
+    width: 280px;
+    padding: 8px;
+    margin: 5px 0 8px;
+    border-radius: 3px;
+    font-size: 14px;
+    border: 1px solid #d5d5d5;
+}
+
+.inover {
+    border-color: #7b9e3f;
+    background: #ffffef
+}
+
+.ok {
+    background: url(https://lgpic.com/images/user/ico_reg.png) no-repeat 0 10px;
+    height: 30px;
+}
+
+.bad {
+    background: url(https://lgpic.com/images/user/ico_reg.png) no-repeat 0 -48px;
+    padding-left: 20px;
+    font-size: 14px;
+    color: #6382D5
+}
+
+.bt {
+    width: 316px;
+    padding: 8px 10px;
+    background: #89c515;
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 0;
+    margin: 15px auto;
+    font-family: "Microsoft YaHei"
+}
+
+.tishi {
+    position: absolute;
+    width: 60px;
+    display: block;
+    height: 18px;
+    left: 12px;
+    top: 17px;
+    font-size: 16px;
+    line-height: 17px;
+    color: #666;
+    border-right: 1px solid #ccc;
+}
+
+input.getcode {
+    display: inline-block;
+    width: 110px;
+    height: 41px;
+    line-height: 36px;
+    color: #000;
+    text-align: center;
+    background-color: #F7F7F6;
+    cursor: pointer;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/*input.getcode:hover {background:#efefef; text-decoration:none}*/
+.tbl th {
+    font-size: 16px;
+    font-weight: normal;
+    text-align: left
+}
+
+.tbl td p {
+    line-height: 22px
+}
+
+.footer {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 80px;
+    padding: 10px;
+    border-top: 1px solid #efefef;
+}

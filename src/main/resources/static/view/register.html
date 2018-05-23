@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>注册为会员 - 环球农业网</title>
+    <link rel="icon" type="image/x-icon" href="../pic/icon.png"/>
+    <link rel="stylesheet" type="text/css" href="../css/register.css"/>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+<form name='form1'>
+    <input type="hidden" name="do" value="reg"/>
+    <input type="hidden" name="ship" value="0"/>
+    <input type="hidden" name="reuid" value="1"/>
+    <div class="mw">
+        <div class="logo"><img src="../pic/logo.png" style="vertical-align:middle"><span
+                class="al">注册环球农业账号</span></div>
+    </div>
+    <div class="main">
+        <table cellspacing="0" width="720" cellpadding="3" border="0" align="center" class="tbl">
+            <tr>
+                <th>我是</th>
+                <td colspan="2"><label for="geren">
+                    <input type="radio" name="mtype" value="买家用户" id="geren"
+                           class="radios" tabindex="1" checked>买家用户</label>
+                    &nbsp;<label for="jxs">
+                        <input type="radio" name="mtype" value="经销商" id="jxs"
+                               class="radios">经销商
+                    </label> &nbsp;<label for="dahu">
+                        <input type="radio"
+                               name="mtype" value="农业专家" id="dahu"
+                               class="radios">农业专家</label>&nbsp;
+            <tr>
+                <th width="80">用户名</th>
+                <td width="290">
+                    <input type="text" id="txtUsername" name="userid" class="intxt" tabindex="1"
+                           placeholder="2-7个汉字或3-15个字母"/>
+                </td>
+                <td><p id="_userid"></p></td>
+            </tr>
+            <tr>
+                <th>设置密码</th>
+                <td><input class="intxt" id="txtPassword" name="userpwd" type="password" maxlength="30" tabindex="1"/>
+                </td>
+                <td><p id="_userpwdok"></p></td>
+            </tr>
+            <tr>
+                <th>确认密码</th>
+                <td><input class="intxt" id="userpwdok" name="userpwdok" type="password" maxlength="30" tabindex="1"/>
+                </td>
+                <td><p id="_pwd"></p></td>
+            </tr>
+            <tr>
+                <th>所在地</th>
+                <td>
+                    <input type="text" id="txtAddress" name="address" class="intxt" tabindex="1"
+                           style="margin:0; width:220px" placeholder="详细地址"/>
+                </td>
+            </tr>
+            <tr style="display:none;" id="company">
+                <th>公司名称</th>
+                <td><input type="text" id="txtCompany" name="company" size="40" class="intxt" tabindex="1"/></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>真实姓名</th>
+                <td><input type="text" id="uname" name="uname" class="intxt" style="width:160px" tabindex="1"/> &nbsp;
+                    <label for="man">
+                        <input type="radio" value="男" name="sex" id="man" class="radios" tabindex="1"
+                               checked/>男</label> &nbsp; <label for="woman">
+                        <input type="radio" value="女" name="sex" id="woman" tabindex="1"
+                               class="radios"/>女</label>
+                </td>
+                <td><p id="_uname"></p></td>
+            </tr>
+            <tr>
+                <th height="40" valign="middle">手机号</th>
+                <td valign="middle"><input class="intxt" type="text" class="intxt" id="phone" maxlength="11"
+                                           name="phone" tabindex="1"/></td>
+                <td><p id="_phone"></p></td>
+            </tr>
+            <tr>
+                <th>邮箱</th>
+                <td><input type="text" id="email" name="email" size="40" class="intxt" tabindex="1"/></td>
+                <td><p id="_email"></p></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td colspan="2"><input id="register" class="bt" type="button" value="提交，完成注册"></button>
+                    <p>&nbsp;</p>
+                </td>
+            </tr>
+        </table>
+        <p><a href="login.html">&laquo; 登录</a></p>
+    </div>
+</form>
+<div style="margin-top:20px; text-align:center; font-size:12px;">
+    <a href="http://localhost:8080/argiculture/index" target="_blank">环球农业网</a> &copy; 版权所有
+</div>
+<script type="text/javascript" src="../js/quote/jquery.min.1.8.2.js"></script>
+<script type="text/javascript" src="../js/singup.js"></script>
+<script type="text/javascript">
+    /*完善资料js*/
+    $('input[name=mtype]').click(function () {
+        if ($('input[name=mtype]:checked').val() == '经销商') {
+            $('select[name="market"]').show();
+            $('input[name="address"]').hide();
+        } else {
+            $('input[name="address"]').show();
+            $('select[name="market"]').hide();
+        }
+
+        if ($('input[name=mtype]:checked').val() == '涉农企业') {
+            $('#company').show();
+        } else {
+            $('#company').hide();
+        }
+    });
+    function reg() {
+        if ($("#txtUsername").attr("value") == "" || $('#_userid').attr('class') != "ok") {
+            alert("请检查会员名");
+            $("#txtUsername").focus();
+            return false;
+        } else if ($('#_userpwdok').attr('class') != "ok" || $("#txtPassword").attr("value") == "" || $("#txtPassword").attr("value") != $("#userpwdok").attr("value") || $("#userpwdok").attr("value") == "") {
+            alert("请检查密码");
+            $('#txtPassword').focus();
+            return false;
+        } else if ($("#hidden_nativeplace").attr("value") == "0") {
+            alert("请选择所在地");
+            return false;
+        } else if ($("#uname").attr("value") == "" || $('#_uname').attr('class') != "ok") {
+            alert("请检查真实姓名");
+            $("#uname").focus();
+            return false;
+        } else if ($("#email").attr("value") == "" || $('#_email').attr('class') != "ok") {
+            alert("请填写正确的邮箱");
+            $("#email").focus();
+            return false;
+        } else if ($('input[name="phone"]').val() == '' || $('#_phone').attr('class') != "ok") {
+            alert('手机号码填写有误');
+            return false;
+        }
+        $('form').submit();
+        return true;
+    }
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110996755-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-110996755-1');
+</script>
+</body>
+</html>

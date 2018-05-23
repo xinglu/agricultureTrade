@@ -1,0 +1,19 @@
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS `authority`;
+
+CREATE TABLE `authority` (
+  `id`          INT(11)     NOT NULL AUTO_INCREMENT
+  COMMENT '主键',
+  `name`        VARCHAR(32) NOT NULL
+  COMMENT '权限名称  管理员 专家 商家 普通用户',
+  `identifier`  TINYINT(2)  NOT NULL
+  COMMENT '与权限名称对应的编号,0 管理员  1 专家  2 商家  3 普通用户',
+  `has_del`     TINYINT(1)  NOT NULL DEFAULT 0
+  COMMENT '用户是否删除 0 未删除  1删除',
+
+  `add_time`    DATETIME    NOT NULL,
+  `update_time` TIMESTAMP   NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;

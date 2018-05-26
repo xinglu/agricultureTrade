@@ -3,6 +3,7 @@ package com.sy.graduationPro.controller;
 import com.sy.graduationPro.common.response.ResponseMsg;
 import com.sy.graduationPro.service.IUserService;
 import com.sy.graduationPro.common.util.StrUtil;
+import com.sy.graduationPro.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,19 +47,27 @@ public class UserController {
         }
 
         //用户登录动作
-        boolean res = userService.userLogin(loginName, password);
-        if (!res) {
+        UserVO res = userService.userLogin(loginName, password);
+        if (null == res) {
             return ResponseMsg.fail("登录失败");
         }
-        return ResponseMsg.success("登录成功");
+        return ResponseMsg.success(res);
     }
 
     //查看用户信息
     @ResponseBody
     @GetMapping("/look")
-    public ResponseMsg lookUserInfo() {
+    public ResponseMsg lookUserInfo(String userName) {
 
-        return ResponseMsg.success();
+        if (StrUtil.isEmpty(userName)) {
+            return ResponseMsg.fail("用户名不可为空");
+        }
+
+        UserVO user = userService.lookUserInfo(userName);
+        if (user == null) {
+            return ResponseMsg.fail("查询用户信息失败");
+        }
+        return ResponseMsg.success(user);
     }
 
     //修改用户信息

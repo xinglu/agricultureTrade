@@ -24,9 +24,17 @@ public class Goods implements Serializable {
     private Date addTime = new Date();
 
     private String name;
-    private Integer kindId;
+    private String kindUid;
     private Float sellTotalNum = 0f;
     private Integer hasDel = 0;
+
+    public Goods() {
+    }
+
+    public Goods(String name, String kindUid) {
+        this.name = name;
+        this.kindUid = kindUid;
+    }
 
     public Float getSellTotalNum() {
         return sellTotalNum;
@@ -68,12 +76,12 @@ public class Goods implements Serializable {
         this.name = name;
     }
 
-    public Integer getKindId() {
-        return kindId;
+    public String getKindUid() {
+        return kindUid;
     }
 
-    public void setKindId(Integer kindId) {
-        this.kindId = kindId;
+    public void setKindUid(String kindUid) {
+        this.kindUid = kindUid;
     }
 
     public Integer getHasDel() {

@@ -6,8 +6,8 @@ CREATE TABLE `goods` (
   COMMENT '主键',
   `name`           VARCHAR(32) NOT NULL
   COMMENT '商品名称',
-  `kind_id`        INT(11)     NOT NULL
-  COMMENT '商品对应的类别的id',
+  `kind_uid`       VARCHAR(32) NOT NULL
+  COMMENT '商品对应的类别的uuid',
   `sell_total_num` FLOAT       NOT NULL DEFAULT 0
   COMMENT '这种商品一共卖出多少',
   `has_del`        TINYINT(1)  NOT NULL DEFAULT 0

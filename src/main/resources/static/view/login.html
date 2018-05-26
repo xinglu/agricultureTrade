@@ -7,86 +7,43 @@
     <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no"
           name="viewport" id="viewport"/>
     <title>会员登录 - 环球农业网</title>
-    <script src="/public/js/j.js" language="javascript" type="text/javascript"></script>
     <link rel="icon" type="image/x-icon" href="../pic/icon.png"/>
-    <link rel="stylesheet" type="text/css" href="../css/login.css" />
+    <link rel="stylesheet" type="text/css" href="../css/login.css"/>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="../js/quote/jquery.min.1.8.2.js"></script>
+    <script type="text/javascript" src="../js/login.js"></script>
 </head>
 
 <body>
 <div class="login">
     <div class="logo"><img src="../pic/logo.png"></div>
-    <form name='form1' method='POST' action='/account/login' onsubmit="return checksubmit();">
-        <input type="hidden" name="gourl" value="https://www.lvguo.net/account/signup"/>
-        <input type="hidden" name="do" value="login"/>
+    <div class="login-info">
         <p class="al">登录</p>
-        <div class="inpbox"><span class="tishi">
-
-        </span><input id="txtUsername" class="intxt" type="text" name="userid"
-                      aria-required="true" autocomplete="false"
-                      required="required" onblur="errorlanding();"
-                      autocorrect="off" placeholder="会员名或手机号"/></div>
-        <div class="inpbox"><span class="tishi tishi_pwd">
-
-        </span><input id="txtPassword" class="intxt" type="password"
-                      name="pwd" aria-required="true"
-                      autocomplete="false" required="required"
-                      autocorrect="off" placeholder="密码"/></div>
-        <div class="inpbox" style="display:none;" id="showcodes">
-            <span class="tishi tishi_vcode"></span><input
-                id="vdcode" class="intxt" type="text" name="vdcode" autocomplete="false"/>
-            <img id="vdimgck"
-                 align="absmiddle"
-                 onclick="this.src=this.src+'?'"
-                 style="display:block; width:110px; height:38px; position:absolute; right:10px; top:2px; cursor: pointer; "
-                 alt="看不清？点击更换"
-                 src="/Mkimg/vdimgck"/>
+        <div class="inpbox">
+            <span class="tishi"></span>
+            <input id="txtUsername" class="intxt" type="text" name="userid"
+                   required="required" placeholder="会员名或手机号"/>
         </div>
-
-        <p><input id="btnSignCheck" class="bt" type="submit" value="登 录"/></p>
-        <p style="padding:10px 0; text-align:right;"><a href="/account/getpwd" style="color:#999">找回密码</a></p>
-    </form>
+        <div class="inpbox">
+            <span class="tishi tishi_pwd"></span>
+            <input id="txtPassword" class="intxt" type="password"
+                   name="pwd" required="required" placeholder="密码"/>
+        </div>
+    </div>
+    <input id="btnSignCheck" class="bt" type="button" value="登 录"></button>
+    <p style="padding:10px 0; text-align:right;"><a href="" style="color:#999">找回密码</a></p>
     <p><span style="line-height:32px; color:#999"></span><br><a href="register.html" class="reg">还不是会员？立即注册</a></p>
 </div>
 <div style="margin-top:20px; text-align:center; font-size:12px;"><a
         href="http://localhost:8080/argiculture/index" target="_blank">环球农业网</a> &copy; 版权所有
 </div>
 
-<script type="text/javascript" src="/public/js/j.js"></script>
-<script type="text/javascript">
-    function errorlanding() {
-        $.get("/account/errorlanding", function (data) {
-            if (data > 4) {
-                $('#showcodes').show();
-            }
-        });
-    }
-
-    function checksubmit() {
-        if ($('#txtUsername').val() == '') {
-            alert('请输入手机号/会员');
-            $('#txtUsername').focus();
-            return false;
-        } else if ($('#txtPassword').val() == '') {
-            alert('请输入密码');
-            $('#txtPassword').focus();
-            return false;
-        } else if ($('#vdcode').val() == '' && $('#showcodes').css("display") == 'block') {
-            alert('请输入验证码');
-            $('#vdcode').focus();
-            return false;
-        }
-        return true;
-    }
-</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110996755-1"></script>
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
+    var loginBt = document.getElementById('btnSignCheck');
+    loginBt.onclick = function () {
+        userLogin();
     }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-110996755-1');
 </script>
 </body>
 </html>

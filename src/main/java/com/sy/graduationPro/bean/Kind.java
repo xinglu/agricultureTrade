@@ -24,7 +24,24 @@ public class Kind implements Serializable {
     private Date addTime = new Date();
 
     private String name;
+    private String uid;
     private Integer hasDel = 0;
+
+    public Kind() {
+    }
+
+    public Kind(String name, String uid) {
+        this.name = name;
+        this.uid = uid;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
 
     public Integer getId() {
         return id;

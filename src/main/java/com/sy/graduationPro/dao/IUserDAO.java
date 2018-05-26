@@ -20,4 +20,7 @@ public interface IUserDAO extends JpaRepository<User, Integer> {
     @Query("select u from User u where u.name=:loginInfo or u.phone=:loginInfo " +
             "and u.password=:password and u.hasDel=0")
     User userLogin(@Param("loginInfo") String loginInfo, @Param("password") String password);
+
+    @Query("select u from User u where u.name=:userName and u.hasDel = 0")
+    User findByName(@Param("userName")String name);
 }

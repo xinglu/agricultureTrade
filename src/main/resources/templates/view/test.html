@@ -1,68 +1,58 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
 <html>
 <head>
     <meta charset="utf-8">
-    <title>点击文字弹出一个DIV层窗口代码</title>
+    <title></title>
     <style>
-        .black_overlay{
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index:1001;
-            -moz-opacity: 0.8;
-            opacity:.80;
-            filter: alpha(opacity=88);
+        th{
+            width: 110px;
+            line-height: 25px;
+            background: #eee;
         }
-        .white_content {
-            display: none;
-            position: absolute;
-            top: 25%;
-            left: 25%;
-            width: 55%;
-            height: 55%;
-            padding: 20px;
-            border: 10px solid;
-            background-color: white;
-            z-index:1002;
-            overflow: auto;
+        input{
+            width: 108px;
+            line-height: 23px;
         }
     </style>
 </head>
 <body>
-<p>示例弹出层：<a href = "JavaScript:void(0)" onclick = "openDialog()">请点这里</a></p>
-<div id="light" class="white_content">
-    <table>
-        <tr>
-            <td>fffff</td>
-            <td>dddddd</td>
-        </tr>
-        <tr>
-            <td>fffff</td>
-            <td>dddddd</td>
-        </tr>
-        <tr>
-            <td>fffff</td>
-            <td>dddddd</td>
-        </tr>
-    </table>
-    <a href = "javascript:void(0)" onclick = "closeDialog()">点这里关闭本窗口</a>
-</div>
-<div id="fade" class="black_overlay"></div>
-</body>
-<script type="text/javascript">
-    $(function(){
-    });
-    function openDialog(){
-        document.getElementById('light').style.display='block';
-        document.getElementById('fade').style.display='block'
+<table>
+    <tr>
+        <th>1</th>
+        <th>2</th>
+        <th ><input id="edit" value="编辑"></th>
+    </tr>
+</table>
+<script>
+    var statu = 0;
+    var edit = document.getElementById('edit');
+    var item = document.getElementsByTagName('th');
+    var item_length = item.length-1;
+    var item_value = new Array(item_length);
+
+    for(i = 0; i < item_length; i++){
+        item_value[i] = item[i].innerHTML;
     }
-    function closeDialog(){
-        document.getElementById('light').style.display='none';
-        document.getElementById('fade').style.display='none'
+
+    edit.onclick =function(){
+        if(statu == 0){
+            edit.innerHTML= '保存';
+            for(i = 0; i < item_length; i++){
+                item[i].innerHTML = '<input type="txt" class="item_input" value="'+item_value[i]+'">';
+            }
+            statu = 1;
+        }else{
+            edit.innerHTML= '编辑';
+            var item_input = document.getElementsByClassName('item_input');
+            for(i = 0; i < item_length; i++){
+                item_value[i] = item_input[i].value;
+            }
+            for(i = 0; i < item_length; i++){
+                item[i].innerHTML = item_value[i];
+            }
+            statu = 0
+        }
+        return false;
     }
 </script>
+</body>
 </html>

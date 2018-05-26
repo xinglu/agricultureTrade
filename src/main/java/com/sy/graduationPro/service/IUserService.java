@@ -1,5 +1,6 @@
 package com.sy.graduationPro.service;
 
+import com.sy.graduationPro.vo.UserVO;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,6 +14,7 @@ public interface IUserService {
                      String gender, String phone, String email);
 
     //用户登录
-    boolean userLogin(String logInfo, String password);
+    UserVO userLogin(String logInfo, String password);
 
+    UserVO lookUserInfo(String userName);
 }

@@ -39,11 +39,9 @@
     <script type="text/javascript" src="http://www.zgncpw.com/file/script/common.js"></script>
     <script type="text/javascript" src="http://www.zgncpw.com/file/script/share.js"></script>
     <script type="text/javascript" src="http://www.zgncpw.com/file/script/page.js"></script>
-    <script type="text/javascript" src="http://www.zgncpw.com/file/script/common/comm.min.js?version=20180114"></script>
     <script type="text/javascript"
             src="http://www.zgncpw.com/file/script/common/imgmore.min.js?version=20180114"></script>
 
-    <script type="text/javascript" src="js/home.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
@@ -67,9 +65,9 @@
                      alt="环球农产品网"/>
             </a>
         </div>
-        <div class="login" style="height: 100%;line-height: 84px;float: right;">
-            <a href="view/login.html">登录</a>
-            <a href="view/register.html">注册</a>
+        <div id="info" class="login" style="height: 100%;line-height: 84px;float: right;margin-right: 2cm;">
+            <a href="view/login.html" >登录&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</a>
+            <a href="view/register.html" >注册</a>
         </div>
     </div>
     <div class="bg-color-green clearfix" id="top-menu">
@@ -77,305 +75,19 @@
             <div class="fxl drop-down-menu">
                 <ul>
                     <li class="sub-menu pos-rel one">
-                        <ul class="pos-abs one-li-new left-m" style="display: none;">
-                            <li class="one-0 no" title="生鲜水果">
-                                <a href="http://www.zgncpw.com/sell/list-13.html" target="_blank">
-                                    <span>生鲜水果</span>
-                                </a>
-                                <ul class="pos-abs">
-                                    <li class="clearfix two-0">
-                                        <b><a href="http://www.zgncpw.com/sell/list-62.html" target="_blank">草莓</a></b>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="one-1 no" title="新鲜蔬菜">
-                                <a href="http://www.zgncpw.com/sell/list-9.html" target="_blank">
-                                    <span>新鲜蔬菜</span>
-                                </a>
-                                <ul class="pos-abs">
-                                    <li class="clearfix two-0">
-                                        <b><a href="http://www.zgncpw.com/sell/list-40.html" target="_blank">竹笋</a></b>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="one-2" title="畜牧水产">
-                                <a href="http://www.zgncpw.com/sell/list-16.html" target="_blank">
-                                    <span>畜牧水产</span>
-                                </a>
-                                <ul class="pos-abs" style="display: none;">
-                                    <li class="clearfix two-0">
-                                        <b><a href="http://www.zgncpw.com/sell/list-767.html"
-                                              target="_blank">畜禽类</a></b>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-86.html">羊</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-87.html">兔</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-199.html">鸭</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-200.html">鸡</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-201.html">鹅</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-611.html">雁</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-610.html">山鸡</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-848.html">猪</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-849.html">牛</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-850.html">狗</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-851.html">鸽子</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-852.html">马</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-853.html">驴</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-854.html">骡</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-855.html">火鸡</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-857.html">乌骨鸡</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-858.html">贵妃鸡</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-859.html">野猪</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-860.html">香猪</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-861.html">豪猪</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1005.html">珍珠鸡</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-27457.html">鸵鸟</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-27463.html">鹧鸪</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-134097.html">骆驼</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="one-3" title="米面粮油">
-                                <a href="http://www.zgncpw.com/sell/list-6.html" target="_blank">
-                                    <span>米面粮油</span>
-                                </a>
-                                <ul class="pos-abs" style="display: none;">
-                                    <li class="clearfix two-0">
-                                        <b><a href="http://www.zgncpw.com/sell/list-5.html" target="_blank">主粮</a></b>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-211.html">大米</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-19.html">麦类</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-20.html">玉米</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-21.html">稻谷</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-24.html">面粉</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-25.html">米粉</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-27.html">粉丝</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-23.html">其它粮食</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-755.html">挂面</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-757.html">小米</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-758.html">黄米面</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1140.html">莜面</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-27471.html">粉条</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-27472.html">淀粉</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="one-4" title="农副产品">
-                                <a href="http://www.zgncpw.com/sell/list-202.html" target="_blank">
-                                    <span>农副产品</span>
-                                </a>
-                                <ul class="pos-abs">
-                                    <li class="clearfix two-0">
-                                        <b><a href="http://www.zgncpw.com/sell/list-15.html"
-                                              target="_blank">茶叶酒饮</a></b>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-77.html">绿茶</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-78.html">红茶</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-79.html">花茶</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-80.html">保健茶</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-81.html">普洱茶</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-956.html">黄茶</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-957.html">白茶</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-961.html">乌龙茶</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-963.html">黑茶</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-82.html">其它</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-965.html">毛尖</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-968.html">绞股</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-970.html">蓝茶</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-975.html">酒花茶</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1152.html">葡萄酒</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1153.html">白酒</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1154.html">保健酒</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1155.html">黄酒</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1156.html">进口酒类</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1157.html">饮料</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-24226.html">咖啡</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-24512.html">油茶</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-24515.html">贡菊</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-24812.html">苦丁茶</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-25085.html">湄潭翠芽</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-25088.html">铁观音</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-25132.html">金花茶</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-25285.html">龙井茶</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-25305.html">碧螺春</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-25308.html">茉莉花茶</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-25311.html">六安瓜片</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-44174.html">玫瑰花茶</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-96803.html">红酒</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="one-6" title="花卉苗木">
-                                <a href="http://www.zgncpw.com/sell/list-17.html" target="_blank">
-                                    <span>花卉苗木</span>
-                                </a>
-                                <ul class="pos-abs">
-                                    <li class="clearfix two-0">
-                                        <b><a href="http://www.zgncpw.com/sell/list-89.html"
-                                              target="_blank">绿化类苗木</a></b>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-91.html">竹类</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-92.html">草坪</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="one-7" title="中草药材">
-                                <a href="http://www.zgncpw.com/sell/list-1123.html" target="_blank">
-                                    <span>中草药材</span>
-                                </a>
-                                <ul class="pos-abs">
-                                    <li class="clearfix two-0">
-                                        <b><a href="http://www.zgncpw.com/sell/list-1141.html"
-                                              target="_blank">根茎类</a></b>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1158.html">人参</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1159.html">附子</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="one-9" title="地方特产">
-                                <a href="http://www.zgncpw.com/sell/list-1693.html" target="_blank">
-                                    <span>地方特产</span>
-                                </a>
-                                <ul class="pos-abs" style="display: none;">
-                                    <li class="clearfix two-0">
-                                        <b><a href="http://www.zgncpw.com/sell/list-1865.html" target="_blank">北京特产</a></b>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1868.html">东城土特产</a>
-                                        <a target="_blank" href="http://www.zgncpw.com/sell/list-1884.html">京八件</a>
-                                        <a target="_blank" href="http://www.zgncpw.com/sell/list-1885.html">老北京灌肠</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1869.html">西城特产</a>
-                                        <a target="_blank" href="http://www.zgncpw.com/sell/list-1895.html">酸豆汁</a>
-                                        <a target="_blank" href="http://www.zgncpw.com/sell/list-1896.html">豌豆黄</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1870.html">朝阳特产</a>
-                                        <a target="_blank" href="http://www.zgncpw.com/sell/list-1902.html">冰糖葫芦</a>
-                                        <a target="_blank" href="http://www.zgncpw.com/sell/list-1903.html">北京酱黄瓜</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1871.html">丰台特产</a>
-                                        <a target="_blank" href="http://www.zgncpw.com/sell/list-27476.html">长辛店白枣</a>
-                                        <a target="_blank" href="http://www.zgncpw.com/sell/list-27477.html">太子峪大枣</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1872.html">石景山特产</a>
-                                        <a target="_blank" href="http://www.zgncpw.com/sell/list-1912.html">老北京糊塌子</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1873.html">海淀特产</a>
-                                        <a target="_blank" href="http://www.zgncpw.com/sell/list-1915.html">京西稻</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1874.html">门头沟特产</a>
-                                        <a target="_blank" href="http://www.zgncpw.com/sell/list-1921.html">京白梨</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1875.html">房山特产</a>
-                                        <a target="_blank" href="http://www.zgncpw.com/sell/list-1927.html">房山磨盘柿</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1876.html">顺义特产</a>
-                                        <a target="_blank" href="http://www.zgncpw.com/sell/list-1930.html">鑫双河樱桃</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1877.html">大兴特产</a>
-                                        <a target="_blank" href="http://www.zgncpw.com/sell/list-1936.html">安定桑葚</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1878.html">平谷特产</a>
-                                        <a target="_blank" href="http://www.zgncpw.com/sell/list-1943.html">平谷鲜桃</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1879.html">延庆特产</a>
-                                        <a target="_blank" href="http://www.zgncpw.com/sell/list-1947.html">燕山板栗</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1880.html">密云特产</a>
-                                        <a target="_blank" href="http://www.zgncpw.com/sell/list-1952.html">密云甘栗</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1881.html">怀柔特产</a>
-                                        <a target="_blank" href="http://www.zgncpw.com/sell/list-1956.html">怀柔板栗</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1882.html">昌平特产</a>
-                                        <a target="_blank" href="http://www.zgncpw.com/sell/list-1960.html">昌平草莓</a>
-                                        <a target="_blank" class="four-bold"
-                                           href="http://www.zgncpw.com/sell/list-1883.html">通州特产</a>
-                                        <a target="_blank" href="http://www.zgncpw.com/sell/list-1965.html">通州大樱桃</a>
-                                    </li>
-                                </ul>
-                            </li>
+                        <ul id="goods-list" class="pos-abs one-li-new left-m" style="display: none;">
                         </ul>
                     </li>
                     <li><a class="sub home" href="#">首页</a></li>
                     <li><a target="_blank" class="sub buyer" href="#">买家需求</a></li>
-                    <li><a target="_blank" class="sub seller" href="#">买家需求</a></li>
+                    <li><a target="_blank" class="sub seller" href="#">卖家需求</a></li>
                     <li><a target="_blank" class="sub local" href="#">地区频道</a></li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
-<!--<link rel="stylesheet" type="text/css" href="http://www.zgncpw.com/skin/skin2018/pages/index.min.css?version=20180114"/>-->
+
 <link rel="stylesheet" type="text/css" href="css/index.min.css"/>
 
 <div class="con-width-1200 clearfix" style="height:440px;">
@@ -685,129 +397,6 @@
 </div>
 <div class="clear h30"></div>
 
-<div class="con-width-1200 article clearfix">
-    <i class="iconfont-comm font-orange fxl fs-20">&#xe87b;&nbsp;</i><span class="fxl fs-18">我们其他的服务</span>
-    <div class="clear h20"></div>
-    <Ul class="index_down_adv clearfix" name="liall5">
-        <li><a href="http://o2o.zgncpw.com/ftl-product-home.html" target="_blank"><img
-                src="http://image.zgncpw.com:8000/zgncpw/201803/19/091558381.jpg" width="232" height="150" alt=""/></a>
-        </li>
-        <li><a href="http://www.zgncpw.com/exhibit/" target="_blank"><img
-                src="http://image.zgncpw.com:8000/zgncpw/201803/18/093515231.jpg" width="232" height="150" alt=""/></a>
-        </li>
-        <li><a href="http://o2o.zgncpw.com/ftl-adoption-home.html" target="_blank"><img
-                src="http://image.zgncpw.com:8000/zgncpw/201803/19/091629591.jpg" width="232" height="150" alt=""/></a>
-        </li>
-        <li><a href="http://www.crices.com/" target="_blank"><img
-                src="http://image.zgncpw.com:8000/zgncpw/201803/19/092019421.jpg" width="232" height="150" alt=""/></a>
-        </li>
-        <li><a href="http://www.newguan.com/" target="_blank"><img
-                src="http://image.zgncpw.com:8000/zgncpw/201803/19/092443461.jpg" width="232" height="150" alt=""/></a>
-        </li>
-    </Ul>
-</div>
-<div class="clearline"></div>
-<div class="con-width-1200 clearfix qy_flink">
-    <div class="clearfix">
-        <h4 class="fxl">友情链接：</h4>
-        <span class="fxl">
-</span>
-        <ul class="fxl">
-            <li>
-                <a href="http://www.vegnet.com.cn" target="_blank" title="">
-                    中国蔬菜网 </a>
-            </li>
-            <li>
-                <a href="http://www.yz88.cn/" target="_blank" title="">
-                    养猪巴巴网 </a>
-            </li>
-            <li>
-                <a href="http://www.114guoshu.com" target="_blank" title="专注水果、蔬菜网上批发">
-                    果蔬网 </a>
-            </li>
-            <li>
-                <a href="http://www.pigol.cn" target="_blank" title="">
-                    养猪网 </a>
-            </li>
-            <li>
-                <a href="http://www.ihuashi.cn" target="_blank" title="">
-                    鲜花店 </a>
-            </li>
-            <li>
-                <a href="https://www.nongyao001.com/" target="_blank" title="">
-                    世纪农药网 </a>
-            </li>
-            <li>
-                <a href="http://www.ncggnz.com" target="_blank" title="">
-                    高杆女贞 </a>
-            </li>
-            <li>
-                <a href="http://www.chunguowang.com" target="_blank"
-                   title="纯果网是专注水果批发的水果网，为水果批发商，水果产地代办，水果基地以及水果行业各企业提供水果交易，水果价格，水果配送的相关信息，致力于打造最好的网上水果批发市场。">
-                    水果网 </a>
-            </li>
-            <li>
-                <a href="http://www.e658.cn/" target="_blank" title="">
-                    中国辣椒网 </a>
-            </li>
-            <li>
-                <a href="http://www.ppxmw.com" target="_blank" title="">
-                    畜牧 </a>
-            </li>
-            <li>
-                <a href="http://www.wugu.com.cn" target="_blank" title="农产品信息平台">
-                    吾谷网 </a>
-            </li>
-            <li>
-                <a href="http://www.shuizhi360.com" target="_blank" title="中国水蛭网,水蛭行业最权威的网络平台">
-                    中国水蛭网 </a>
-            </li>
-            <li>
-                <a href="http://www.txooo.com" target="_blank"
-                   title="天下商机致力于有效地帮助创业者与品牌无缝对接，陪伴创业者成功开店！加盟投资伙伴持续加入，纵观加盟开店大数据！打造1+1＞2的强势商机服务平台！天下商机——帮助个人创业的商机服务平台！">
-                    创业小项目 </a>
-            </li>
-            <li>
-                <a href="http://www.zyctd.com" target="_blank" title="">
-                    中药材天地网 </a>
-            </li>
-            <li>
-                <a href="http://www.weenong.com" target="_blank" title="城乡资源共享O2O解决方案">
-                    <span style="color:#000000">微农网</span> </a>
-            </li>
-            <li>
-                <a href="http://www.crices.com" target="_blank" title="农村太阳能路灯，光伏发电，LED照明">
-                    <span style="color:#000000">克瑞斯光电</span> </a>
-            </li>
-            <li>
-                <a href="http://www.nongyao168.com/" target="_blank" title="">
-                    中国农药网 </a>
-            </li>
-            <li>
-                <a href="http://www.zyydq.cn" target="_blank" title="中国惠农网资讯频道">
-                    中医药大全 </a>
-            </li>
-            <li>
-                <a href="http://www.farmer.com.cn/" target="_blank" title="“中国农业新闻网” （www.farmer.com.cn）是经国务院新闻办公室备案的中央重点三农综合新闻网站，既是党和政府“三农”工作方针、政策宣传的重要
-
-窗口，也是农业现代化建设进程中农业资讯、农业数据应用和农产品在线交易的重要服务平台，是推进涉农电子政务、电子商务、电子农务建设的主阵地。
-
-“中国农业新闻网”是农民日报社官方网站。自2004年创建上线以来，在保持农民日报社“三农”新闻宣传权威性的同时，充分发挥互联网、移动互联网的
-
-技术手段，采用文字、图片、专题、视频、动漫、互动等方式，">
-                    中国农业新闻网 </a>
-            </li>
-            <li>
-                <a href="http://www.zgncpw.com" target="_blank" title="农产品交易网">
-                    农产品交易网 </a>
-            </li>
-            <li style="float:right;"><a href="/link/" target="_blank"><b style="padding-left:20px;font-weight:normal;"
-                                                                         target="_blank">更多></b></a></li>
-        </ul>
-    </div>
-</div>
-<div class="clear h20"></div>
-
 <style>
     .auto-scroll.down {
         height: 244px;
@@ -851,6 +440,8 @@
         }
     }
 </style>
+<script type="text/javascript" src="js/home.js"></script>
+<script type="text/javascript" src="http://www.zgncpw.com/file/script/common/comm.min.js?version=20180114"></script>
 <script type="text/javascript" src="http://www.zgncpw.com/file/script/index.js"></script>
 <script type="text/javascript" src="http://www.zgncpw.com/file/script/marquee.js"></script>
 <script type="text/javascript">
@@ -940,8 +531,5 @@
     </div>
 </div>
 
-<!--<script type="text/javascript">-->
-<!--show_task('moduleid=1&html=index');-->
-<!--</script>-->
 </body>
 </html>

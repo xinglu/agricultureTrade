@@ -6,6 +6,8 @@ CREATE TABLE `kind` (
   COMMENT '主键',
   `name`        VARCHAR(32) NOT NULL
   COMMENT '种类名称',
+  `uid`         VARCHAR(32) NOT NULL
+  COMMENT '种类的uuid',
   `has_del`     TINYINT(1)  NOT NULL DEFAULT 0
   COMMENT '用户是否删除 0 未删除  1删除',
 

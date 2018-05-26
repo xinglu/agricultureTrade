@@ -5,6 +5,7 @@ import com.sy.graduationPro.dao.IAuthorityDAO;
 import com.sy.graduationPro.dao.IUserDAO;
 import com.sy.graduationPro.service.IUserService;
 import com.sy.graduationPro.common.util.Encrypt;
+import com.sy.graduationPro.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,25 +35,34 @@ public class UserServiceImpl implements IUserService {
         if (!existList.isEmpty()) {
             return "用户名或手机号已在系统中";
         }
-        name = Encrypt.encrypt(name);
+        password = Encrypt.encrypt(password);
         User user = new User(auth, name, password, address, realName, gender, phone, email);
         userDAO.save(user);
         return "注册成功";
     }
 
     @Override
-    public boolean userLogin(String logInfo, String password) {
+    public UserVO userLogin(String logInfo, String password) {
 
         //根据账号查询无用户或查出多个，登录失败
         List<User> userList = userDAO.findByNameOrPhone(logInfo, logInfo);
         if (userList.isEmpty() || userList.size() > 1) {
-            return false;
+            return null;
         }
         password = Encrypt.encrypt(password);
         User user = userDAO.userLogin(logInfo, password);
         if (null == user) {
-            return false;
+            return null;
         }
-        return true;
+        return new UserVO(user);
+    }
+
+    @Override
+    public UserVO lookUserInfo(String userName) {
+        User user = userDAO.findByName(userName);
+        if (user == null) {
+            return null;
+        }
+        return new UserVO(user);
     }
 }

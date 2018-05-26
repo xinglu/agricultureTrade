@@ -101,22 +101,6 @@
 <script type="text/javascript" src="../js/quote/jquery.min.1.8.2.js"></script>
 <script type="text/javascript" src="../js/singup.js"></script>
 <script type="text/javascript">
-    /*完善资料js*/
-    $('input[name=mtype]').click(function () {
-        if ($('input[name=mtype]:checked').val() == '经销商') {
-            $('select[name="market"]').show();
-            $('input[name="address"]').hide();
-        } else {
-            $('input[name="address"]').show();
-            $('select[name="market"]').hide();
-        }
-
-        if ($('input[name=mtype]:checked').val() == '涉农企业') {
-            $('#company').show();
-        } else {
-            $('#company').hide();
-        }
-    });
     function reg() {
         if ($("#txtUsername").attr("value") == "" || $('#_userid').attr('class') != "ok") {
             alert("请检查会员名");

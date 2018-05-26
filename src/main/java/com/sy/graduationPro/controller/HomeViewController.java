@@ -6,13 +6,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * Created by sunguiyong on 2018/5/15.
  */
-//@RequestMapping("/login")
+//@RequestMapping("/userLogin")
 @Controller
 public class HomeViewController {
 
 //    @ResponseBody
 //    @GetMapping("/index")
-//    public String login(){
+//    public String userLogin(){
 //        return "index";
 //    }
 

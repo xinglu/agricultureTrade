@@ -65,4 +65,15 @@ public class UserServiceImpl implements IUserService {
         }
         return new UserVO(user);
     }
+
+    @Override
+    public boolean changeUserInfo(String name, String phone, String address, String email) {
+
+        List<User> userList = userDAO.findByNameOrPhone(name, phone);
+        if (userList.isEmpty()) {
+            return false;
+        }
+        userDAO.updateUserInfo(name, address, email);
+        return true;
+    }
 }

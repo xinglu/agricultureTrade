@@ -39,9 +39,9 @@ function setTable(data) {
     html += "<table>" +
         "<tr>" +
         "<th class='keyname'>昵称：</th>" +
-        "<th class='value'>" + name + "</th>" +
+        "<th class='value_immutable'>" + name + "</th>" +
         "<th class='keyname'>电话：</th>" +
-        "<th class='value'>" + phone + "</th>" +
+        "<th class='value_immutable'>" + phone + "</th>" +
         "</tr>" +
         "<tr>" +
         "<th class='keyname'>住址：</th>" +
@@ -56,7 +56,7 @@ function setTable(data) {
         "<th class='keyname'></th>" +
         "<th class='keyname'></th>" +
         "<th class='keyname'></th>" +
-        "<th style='float: right;'><input id='edit' type='button' value='编辑'></th>" +
+        "<th style='float: right;'><input id='edit' type='button' value='编辑' onclick='editInput()'></th>" +
         "</tr>" +
         "</table>";
 
@@ -67,3 +67,61 @@ $(function () {
     init();
     getUserInfo();
 });
+
+var statu = 0;
+
+function editInput() {
+    var edit = document.getElementById('edit');
+
+    var item = document.getElementsByClassName("value");
+    var immutable_item = document.getElementsByClassName("value_immutable");
+    var item_length = item.length;
+    var item_value = new Array(item_length);
+
+    for (i = 0; i < item_length; i++) {
+        item_value[i] = item[i].innerHTML;
+    }
+    if (statu == 0) {
+        edit.value = '保存';
+        for (i = 0; i < item_length; i++) {
+            item[i].innerHTML = '<input type="txt" class="item_input" value="' + item_value[i] + '" />';
+        }
+        statu = 1;
+    } else {
+        var item_input = document.getElementsByClassName('item_input');
+        edit.value = '编辑';
+        var name = immutable_item[0].innerHTML;
+        var phone = immutable_item[1].innerHTML;
+        var address = item_input[0].value;
+        var email = item_input[1].value;
+
+        var sEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+
+        if (!sEmail.exec(email)) {
+            alert("邮箱格式不正确");
+            return false;
+        }
+        axios.get('/user/change/', {
+            params: {
+                name: name,
+                phone: phone,
+                address: address,
+                email: email
+            }
+        }).then(function (response) {
+            var data = response.data.data;
+            if(data == "修改用户信息成功"){
+                alert(data);
+                statu = 0;
+                window.location.reload(true);
+                // for (i = 0; i < item_length; i++) {
+                //     item_value[i] = item_input[i].value;
+                // }
+                // for (i = 0; i < item_length; i++) {
+                //     item[i].innerHTML = item_value[i];
+                // }
+            }
+        });
+    }
+    return true;
+}

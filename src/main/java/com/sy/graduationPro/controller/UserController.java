@@ -73,8 +73,15 @@ public class UserController {
     //修改用户信息
     @ResponseBody
     @GetMapping("/change")
-    public ResponseMsg changeUserInfo() {
+    public ResponseMsg changeUserInfo(String name, String phone, String address, String email) {
 
-        return ResponseMsg.success();
+        if (StrUtil.isEmpty(name, phone, address, email)) {
+            return ResponseMsg.fail("参数错误");
+        }
+        boolean res = userService.changeUserInfo(name, phone, address, email);
+        if(!res){
+            return ResponseMsg.fail("当前用户不存在");
+        }
+        return ResponseMsg.success("修改用户信息成功");
     }
 }

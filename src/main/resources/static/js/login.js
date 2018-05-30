@@ -4,6 +4,7 @@
 axios.defaults.baseURL = 'http://localhost:8080/agriculture/';
 axios.defaults.headers.post['Content-Type'] = 'text/plain';
 document.write("<script language=javascript src='../js/handleCookie.js'></script>");
+document.write("<script language=javascript src='../js/util/popup_window.js'></script>");
 
 function userLogin() {
     var userName = $('#txtUsername').val();
@@ -21,7 +22,6 @@ function userLogin() {
     }).then(function (response) {
         var data = response.data.data;
         if (data != "登录失败") {
-            alert("登录成功");
             SetCookie("name", userName);
             SetCookie("password", password);
             if (data.auth == 3) {//买家
@@ -31,6 +31,8 @@ function userLogin() {
             } else if (data.auth == 1) {//专家
 
             }
+        }else{
+            Toast("登录失败,请查看用户名密码是否正确。", 2000);
         }
 
     }).catch(function (response) {

@@ -24,17 +24,18 @@ public class GoodsServiceImpl implements IGoodsService {
     @Autowired
     private IGoodsDAO goodsDAO;
 
-    private List<GoodsKindVO> goodsKindList = new ArrayList<>();
+    private List<GoodsKindVO> goodsKindList;
 
     @Override
     public List<GoodsKindVO> getGoodsAndKind() {
+        goodsKindList = new ArrayList<>();
         List<Kind> kindList = kindDAO.fetchAll();
         for (Kind item : kindList) {
             List<String> goodsNameList = goodsDAO.fetchByUUid(item.getUid());
             GoodsKindVO goodsKindVO = new GoodsKindVO(item.getName(), goodsNameList);
             goodsKindList.add(goodsKindVO);
         }
-        if(null == goodsKindList){
+        if (null == goodsKindList) {
             return new ArrayList<>(goodsKindList);
         }
         return goodsKindList;

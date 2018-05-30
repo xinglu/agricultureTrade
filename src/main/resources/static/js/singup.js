@@ -4,6 +4,7 @@
 axios.defaults.baseURL = 'http://localhost:8080/agriculture/';
 axios.defaults.headers.post['Content-Type'] = 'text/plain';
 document.write("<script language=javascript src='../js/handleCookie.js'></script>");
+document.write("<script language=javascript src='../js/util/popup_window.js'></script>");
 
 function getAuth() {
     var radioValue = $('input:radio[name="mtype"]:checked').val();
@@ -60,7 +61,6 @@ function register() {
         .then(function (response) {
             var resData = response.data.data;
             if (resData == "注册成功") {
-
                 alert("注册成功，页面将跳转");
                 SetCookie("name", userName);
                 SetCookie("password", password);
@@ -72,7 +72,7 @@ function register() {
 
                 }
             } else {
-                alert(resData);
+                Toast(resData, 2000);
                 clearInput();
             }
         })

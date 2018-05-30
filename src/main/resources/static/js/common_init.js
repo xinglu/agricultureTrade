@@ -9,7 +9,8 @@ function getList() {
     axios.get('/gk-list', {
         params: {}
     }).then(function (response) {
-        var data = response.data.data;
+        var data = null;
+        data = response.data.data;
         setHtml(data);
     }).catch(function (response) {
         alert(response);
@@ -17,6 +18,7 @@ function getList() {
 }
 
 function setHtml(data) {
+    console.log(data);
     var goodsList = document.getElementById('goods-list');
     var html = "";
     for (var i = 0; i < data.length; i++) {

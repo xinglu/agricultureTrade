@@ -91,6 +91,7 @@
                     <div id="user-all-info">
 
                     </div>
+                    <!--<div style='float: right;'><input id='edit' type='button' value='编辑'></div>-->
                 </div>
             </div>
         </div>
@@ -98,37 +99,39 @@
 </div>
 
 <script type="text/javascript" src="../js/person_center.js"></script>
-<script>
-    var statu = 0;
-    var edit = document.getElementById('edit');
-    var item = document.getElementsByClassName("value");
-    var item_length = item.length;
-    var item_value = new Array(item_length);
+<!--<script>-->
+    <!--var statu = 0;-->
 
-    for (i = 0; i < item_length; i++) {
-        item_value[i] = item[i].innerHTML;
-    }
+    <!--var item = document.getElementsByClassName("value");-->
+    <!--var item_length = item.length;-->
+    <!--var item_value = new Array(item_length);-->
 
-    edit.onclick = function () {
-        if (statu == 0) {
-            edit.value = '保存';
-            for (i = 0; i < item_length; i++) {
-                item[i].innerHTML = '<input type="txt" class="item_input" value="' + item_value[i] + '">';
-            }
-            statu = 1;
-        } else {
-            edit.value = '编辑';
-            var item_input = document.getElementsByClassName('item_input');
-            for (i = 0; i < item_length; i++) {
-                item_value[i] = item_input[i].value;
-            }
-            for (i = 0; i < item_length; i++) {
-                item[i].innerHTML = item_value[i];
-            }
-            statu = 0
-        }
-        return false;
-    }
-</script>
+    <!--for (i = 0; i < item_length; i++) {-->
+        <!--item_value[i] = item[i].innerHTML;-->
+    <!--}-->
+
+    <!--$("body").delegate("#edit", "click", function () {-->
+        <!--var edit = document.getElementById('edit');-->
+
+        <!--if (statu == 0) {-->
+            <!--edit.value = '保存';-->
+            <!--for (i = 0; i < item_length; i++) {-->
+                <!--item[i].innerHTML = '<input type="txt" class="item_input" value="' + item_value[i] + '">';-->
+            <!--}-->
+            <!--statu = 1;-->
+        <!--} else {-->
+            <!--edit.value = '编辑';-->
+            <!--var item_input = document.getElementsByClassName('item_input');-->
+            <!--for (i = 0; i < item_length; i++) {-->
+                <!--item_value[i] = item_input[i].value;-->
+            <!--}-->
+            <!--for (i = 0; i < item_length; i++) {-->
+                <!--item[i].innerHTML = item_value[i];-->
+            <!--}-->
+            <!--statu = 0-->
+        <!--}-->
+        <!--return false;-->
+    <!--}) ;-->
+<!--</script>-->
 </body>
 </html>

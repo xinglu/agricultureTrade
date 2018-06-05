@@ -29,6 +29,15 @@ public class Store implements Serializable {
     private Integer hasCancel = 0;
     private Integer sellNum = 0;
 
+    public Store() {
+    }
+
+    public Store(Integer sellerId, String name, String storeAdd) {
+        this.sellerId = sellerId;
+        this.name = name;
+        this.storeAdd = storeAdd;
+    }
+
     public Integer getSellNum() {
         return sellNum;
     }

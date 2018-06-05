@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <meta name="robots" content="nofollow"/>
+    <meta name="generator" content="DESTOON B2B - www.destoon.com"/>
+    <meta http-equiv="x-ua-compatible" content="IE=8"/>
+    <title>供应信息管理-商务中心-农产品交易网</title>
+    <link rel="icon" type="image/x-icon" href="../pic/icon.png"/>
+    <link rel="stylesheet" type="text/css" href="../css/sell_goods.css"/>
+
+    <script type="text/javascript" src="http://www.zgncpw.com/lang/zh-cn/lang.js"></script>
+    <script type="text/javascript" src="http://www.zgncpw.com/file/script/config.js"></script>
+    <script type="text/javascript" src="../js/quote/jquery.js"></script>
+    <script type="text/javascript" src="http://www.zgncpw.com/file/script/common.js"></script>
+    <script type="text/javascript" src="http://www.zgncpw.com/file/script/admin.js"></script>
+    <script type="text/javascript" src="http://www.zgncpw.com/file/script/member.js"></script>
+    <script type="text/javascript" src="http://www.zgncpw.com/file/script/common/device.js"></script>
+    <!--加入 start-->
+    <script type="text/javascript" src="http://www.zgncpw.com/file/script/common/imgmore.js?version="></script>
+    <script type="text/javascript" src="http://www.zgncpw.com/file/script/common/public.js?version="></script>
+    <link rel="stylesheet" type="text/css" href="http://www.zgncpw.com/skin/skin2018/common/member.css?version="/>
+    <link rel="stylesheet" type="text/css" href="http://www.zgncpw.com/skin/skin2018/common/iconfont.css?version="/>
+    <link rel="stylesheet" type="text/css" href="http://www.zgncpw.com/skin/skin2018/common/html5.css?version="/>
+    <link rel="stylesheet" type="text/css" href="http://www.zgncpw.com/skin/skin2018/common/btn.css?version="/>
+    <link rel="stylesheet" type="text/css"
+          href="http://www.zgncpw.com/skin/skin2018/common/iconfont_comm.css?version="/>
+    <link rel="stylesheet" type="text/css"
+          href="http://www.zgncpw.com/skin/skin2018/common/iconfont_member.css?version="/>
+    <link rel="stylesheet" type="text/css" href="http://www.zgncpw.com/skin/skin2018/common/public_comm.css"/>
+    <!--加入 end-->
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+<div class="con-width-1200 clearfix">
+    <div id="msgbox" style="display:none;"></div>
+    <div class="head" id="head">
+
+    </div>
+    <div class="head_s" id="destoon_space">&nbsp;</div>
+    <div class="main_tb pos-rel clearfix">
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td valign="top" class="main" id="main">
+                    <form method="post" id="dform" action="?" target="send">
+
+                        <ul class="send-list clearfix">
+                            <li class="clearfix">
+                                <label><span class="f_red">*</span> 信息标题：</label>
+                                <div class="con clearfix">
+                                    <input placeholder="请输入标题" type="text" id="title" size="50"
+                                           value=""/>
+                                    <span class="fs-12 font-gray">（2-30个字）</span>
+                                    <span id="dtitle" class="fs-12 f_red"></span>
+                                </div>
+                            </li>
+                            <li class="clearfix">
+                                <label><span class="f_red">*</span> 行业分类：</label>
+                                <div class="con my-radio select clearfix">
+                                    <select id="jia" onchange="ChangeExampleSelect(this.selectedIndex)">
+                                    </select>
+                                    <select id="example">
+                                    </select>
+                                </div>
+                            </li>
+                            <li class="clearfix one">
+                                <label>产品图片：</label>
+                                <div class="con clearfix">
+                                    <input type="hidden"  id="thumb" value=""/>
+                                    <input type="hidden"  id="thumb1" value=""/>
+                                    <input type="hidden"  id="thumb2" value=""/>
+                                    <table width="360">
+                                        <tr align="left" height="120" class="c_p">
+                                            <td width="120"><img
+                                                    src="../pic/waitpic.gif"
+                                                    width="100" height="100" id="showthumb2" title="预览图片" alt=""/>
+                                            </td>
+                                            <td id="tr_test"></td>
+                                        </tr>
+                                    </table>
+                                    <span id="dthumb" class="f_red"></span>
+                                    <div class="font-gray fs-12">
+                                        <b class="fs-12 fxl">注：</b>
+                                        <p class="fxl">
+                                            上传的图片中不能含有电话号码、网站等联系方式，否则可能导致该条信息无法通过审核。<br>
+                                            为了展示图片不变形,请在发布图片的时候按<span class="font-red fs-12">460(宽)*320(高)</span>比例发布。
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="clearfix one">
+                                <label>交易条件：</label>
+                                <div class="con clearfix">
+                                    <table width="100%">
+                                        <tr>
+                                            <td align="left" class="font-gray" width="50px">产品单价</td>
+                                            <td class="pos-rel">
+                                                <input id="price" type="text" size="10" value="" />
+                                                <div class="r-font">元/<span class="fs-12" id="u1">单位</span></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left" class="font-gray">供货总量</td>
+                                            <td class="pos-rel">
+                                                <input id="totalQuantity" type="text" size="10" value="" />
+                                                <div class="r-font"><span class="fs-12" id="u3">单位</span></div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <span class="fs-12 font-gray">建议详细填写交易条件，否则买家无法为您的产品下订单</span>
+                                </div>
+                            </li>
+                            </li>
+                            <li class="clearfix one">
+                                <label></label>
+                                <div class="con clearfix">
+                                    <input type="button"  value=" 提 交 " id="submitBtn"
+                                           class="btn btn-green mobile"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="button" value=" 返 回 " class="btn gray mobile"
+                                           onclick="history.back(-1);"/>
+                                </div>
+                            </li>
+                        </ul>
+                    </form>
+                    <script type="text/javascript">s('mid_5');
+                    m('add');</script>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="back2top"><a href="javascript:void(0);" title="返回顶部">&nbsp;</a></div>
+</div>
+<div class="pub-footer clearfix">
+    <div class="down clearfix">
+        Copyright © 2017 维贸网络 <span>版权所有</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="font-gray"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="http://www.miibeian.gov.cn" target="_blank">冀ICP备15003989号-2</a> &nbsp;&nbsp;&nbsp;&nbsp;<span
+            class="font-gray"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+        增值电信业务经营许可证：冀B2-20160010
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="font-gray">|</span>&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+</div>
+
+<script type="text/javascript" src="../js/sell_goods.js"></script>
+</body>
+</html>

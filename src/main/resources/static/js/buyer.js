@@ -16,4 +16,32 @@ function init() {
 $(function () {
     getList();
     init();
+    setGoodsSuggestList();
 });
+
+function setGoodsSuggestList() {
+    axios.get('/goods/get/all', {
+        params: {}
+    }).then(function (response) {
+        var data = response.data.data;
+        setLi(data);
+    });
+}
+
+function setLi(data) {
+    var html = "";
+    for (var i = 0; i < data.length; i++) {
+        html += "<li><a target='_blank' onclick='clickGoods(\"" + data[i].goodsName + "\")'>" +
+            "<img class='rad100' " +
+            "src='" + data[i].goodsPic + "'/>" +
+            "<p>" + data[i].goodsName + "</p></a>" +
+            "</li>";
+    }
+    var goodsSug = document.getElementById("goods_sug");
+    goodsSug.innerHTML = html;
+}
+
+function clickGoods(goodsName) {
+    var url = "http://localhost:8080/agriculture/view/stores.html?kindName=&goodsName=" + goodsName;
+    window.open(url);
+}

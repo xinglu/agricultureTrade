@@ -5,6 +5,7 @@
 axios.defaults.baseURL = 'http://localhost:8080/agriculture/';
 axios.defaults.headers.post['Content-Type'] = 'text/plain';
 document.write("<script language=javascript src='../js/handleCookie.js'></script>");
+document.write("<script language=javascript src='../js/util/popup_button.js'></script>");
 
 function init() {
     var username = ReadCookie("name");
@@ -114,14 +115,34 @@ function editInput() {
                 alert(data);
                 statu = 0;
                 window.location.reload(true);
-                // for (i = 0; i < item_length; i++) {
-                //     item_value[i] = item_input[i].value;
-                // }
-                // for (i = 0; i < item_length; i++) {
-                //     item[i].innerHTML = item_value[i];
-                // }
             }
         });
     }
     return true;
+}
+
+$("#myStore").click(function () {
+    lookMyStore();
+});
+
+//查看我的店铺
+function lookMyStore() {
+    var username = ReadCookie("name");
+
+    axios.get('/goods/get/storeName', {
+            params: {
+                userName:username
+            }
+        })
+        .then(function (response) {
+            var resCode = response.data.code;
+            if (resCode == 200) {
+                document.location = "http://localhost:8080/agriculture/view/my_store.html";
+            } else {
+                msgbox('注册店铺?','请确认是否注册店铺',null,1,1);
+            }
+        })
+        .catch(function (response) {
+
+        });
 }

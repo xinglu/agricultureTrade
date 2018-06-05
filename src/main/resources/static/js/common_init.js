@@ -1,12 +1,12 @@
 /**
  * Created by sunguiyong on 2018/5/24.
  */
-axios.defaults.baseURL = 'http://localhost:8080/agriculture/goods';
+axios.defaults.baseURL = 'http://localhost:8080/agriculture';
 axios.defaults.headers.post['Content-Type'] = 'text/plain';
 
 //每个种类的商品，在页面中显示的列表
 function getList() {
-    axios.get('/gk-list', {
+    axios.get('/goods/gk-list', {
         params: {}
     }).then(function (response) {
         var data = null;
@@ -27,22 +27,17 @@ function setHtml(data) {
     goodsList.innerHTML = html;
 }
 
-function setKindLi(kindName, goodsList) {
+//左侧的种类列表
+function setKindLi(kindName) {
     return "<li class='one-0' title='" + kindName + "'>" +
-        "<a href='http://www.zgncpw.com/sell/list-13.html' target='_blank'>" +
+        "<a onclick='clickKind(\"" + kindName + "\")' target='_blank'>" +
         "<span>" + kindName + "</span>" +
         "</a>" +
         "</li>";
 }
 
-function getGoodsListHtml(goodsList) {
-    var len = goodsList.length;
-    var html = "";
-    for (var i = 0; i < len; i++) {
-        console.log(goodsList[i]);
-        html += "<a target='_blank' class='four-bold'" +
-            " href='http://www.zgncpw.com/sell/list-86.html'>" + goodsList[i] + "</a>";
-    }
-    console.log(html);
-    return html;
+function clickKind(data) {
+    var url = "http://localhost:8080/agriculture/view/stores.html?kindName="+data+"&goodsName=";
+    window.open(url);
+    // document.location = url;
 }

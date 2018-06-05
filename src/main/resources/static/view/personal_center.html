@@ -3,9 +3,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>个人中心 - 环球农业网</title>
+    <title>个人中心 - 农产品交易网</title>
     <link rel="stylesheet" type="text/css"
-          href="https://staticlive.douyucdn.cn/common/douyu/style/user_css.css?v=20171211v20610"/>
+          href="../css/user_css.css"/>
     <link rel="icon" type="image/x-icon" href="../pic/icon.png"/>
     <link rel="stylesheet" type="text/css" href="../css/common.min.css"/>
     <script>
@@ -32,7 +32,7 @@
             <a href="http://localhost:8080/agriculture/view/buyer.html">
                 <img class="logo-all fxl"
                      src="../pic/logo.png"
-                     alt="环球农产品网"/>
+                     alt="农产品交易网"/>
             </a>
         </div>
         <div id="uInfo" style="height: 100%;line-height: 84px;float: right;">
@@ -48,18 +48,19 @@
             </div>
         </div>
         <div class="u_main clearfix">
-
             <div class="u_nav">
                 <ul>
-                    <li><a href="#" class="current"><i class="u_nav_icon1"></i>我的资料</a></li>
-                    <li><a href="/member/pm"><i class="u_nav_icon2"></i>我的店铺<em class='letter_num'
-                                                                                style='display: none;'></em></a></li>
-                    <li><a href="/room/follow"><i class="u_nav_icon3"></i>购买记录</a></li>
+                    <li><a href="#" class="current">
+                        <i class="u_nav_icon1"></i>我的资料</a></li>
+                    <li id="myStore"><a>
+                        <i class="u_nav_icon5"></i>我的店铺<em class='letter_num' style='display: none;'></em></a></li>
+                    <li><a href="/room/follow">
+                        <i class="u_nav_icon3"></i>购买记录</a></li>
                 </ul>
 
             </div>
 
-            <div class="u_mainbody" style="overflow: inherit; ">
+            <div id="info" class="u_mainbody" style="overflow: inherit; ">
                 <div class="user_myprofile user_info_page">
                     <div class="togglebtn clearfix" id="js_tab_ul">
                         <span class="fl"></span>
@@ -99,39 +100,5 @@
 </div>
 
 <script type="text/javascript" src="../js/person_center.js"></script>
-<!--<script>-->
-    <!--var statu = 0;-->
-
-    <!--var item = document.getElementsByClassName("value");-->
-    <!--var item_length = item.length;-->
-    <!--var item_value = new Array(item_length);-->
-
-    <!--for (i = 0; i < item_length; i++) {-->
-        <!--item_value[i] = item[i].innerHTML;-->
-    <!--}-->
-
-    <!--$("body").delegate("#edit", "click", function () {-->
-        <!--var edit = document.getElementById('edit');-->
-
-        <!--if (statu == 0) {-->
-            <!--edit.value = '保存';-->
-            <!--for (i = 0; i < item_length; i++) {-->
-                <!--item[i].innerHTML = '<input type="txt" class="item_input" value="' + item_value[i] + '">';-->
-            <!--}-->
-            <!--statu = 1;-->
-        <!--} else {-->
-            <!--edit.value = '编辑';-->
-            <!--var item_input = document.getElementsByClassName('item_input');-->
-            <!--for (i = 0; i < item_length; i++) {-->
-                <!--item_value[i] = item_input[i].value;-->
-            <!--}-->
-            <!--for (i = 0; i < item_length; i++) {-->
-                <!--item[i].innerHTML = item_value[i];-->
-            <!--}-->
-            <!--statu = 0-->
-        <!--}-->
-        <!--return false;-->
-    <!--}) ;-->
-<!--</script>-->
 </body>
 </html>

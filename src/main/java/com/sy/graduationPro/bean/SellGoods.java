@@ -23,12 +23,32 @@ public class SellGoods implements Serializable {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date addTime = new Date();
 
+    private String name;
     private Integer storeId;
     private Integer goodsId;
-    private Float prive;
+    private Float price;
     private Integer quantity;
     private String pic;
     private Integer hasCancel = 0;
+
+    public SellGoods(){}
+    public SellGoods(String name, Integer storeId, Integer goodsId,
+                     Float price, Integer quantity, String pic) {
+        this.name = name;
+        this.storeId = storeId;
+        this.goodsId = goodsId;
+        this.price = price;
+        this.quantity = quantity;
+        this.pic = pic;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public Integer getId() {
         return id;
@@ -70,12 +90,12 @@ public class SellGoods implements Serializable {
         this.goodsId = goodsId;
     }
 
-    public Float getPrive() {
-        return prive;
+    public Float getPrice() {
+        return price;
     }
 
-    public void setPrive(Float prive) {
-        this.prive = prive;
+    public void setPrice(Float price) {
+        this.price = price;
     }
 
     public Integer getQuantity() {

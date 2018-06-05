@@ -3,6 +3,9 @@ package com.sy.graduationPro.common.constant;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by sunguiyong on 2018/5/21.
  */
@@ -18,5 +21,15 @@ public class BaseConstant {
         goodMap.put("花卉苗木","牡丹");
         goodMap.put("中草药材","人身");
         goodMap.put("地方特产","老北京灌肠");
+    }
+
+
+    public static Map<String, Integer> authMap = new HashMap<>();
+
+    static{
+        authMap.put("普通用户",3);
+        authMap.put("卖家",2);
+        authMap.put("专家",1);
+        authMap.put("管理员",0);
     }
 }

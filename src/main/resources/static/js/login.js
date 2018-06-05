@@ -27,7 +27,7 @@ function userLogin() {
             if (data.auth == 3) {//买家
                 document.location = "http://localhost:8080/agriculture/view/buyer.html";
             } else if (data.auth == 2) {//卖家
-
+                document.location = "http://localhost:8080/agriculture/view/buyer.html";
             } else if (data.auth == 1) {//专家
 
             }

@@ -6,6 +6,7 @@ CREATE TABLE `sell_goods` (
   COMMENT '主键',
   `store_id`    INT(11)    NOT NULL
   COMMENT '商家id',
+  `name` varchar(255) not null COMMENT '出售商品的名字',
   `goods_id`    INT(11)    NOT NULL
   COMMENT '商品对应的id',
   `price`       FLOAT      NOT NULL

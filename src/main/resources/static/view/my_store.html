@@ -13,43 +13,40 @@
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
-    <title>生鲜水果交易网</title>
+    <title>个人店铺--农产品交易网</title>
     <meta name="keywords" content="生鲜水果,批发生鲜水果,销售生鲜水果,供应生鲜水果,生鲜水果交易网,生鲜水果批发,生鲜水果行情"/>
     <meta name="description" content="关于生鲜水果批发价格行情,请查阅各个供应商的供应信息。生鲜水果的批发及行情查阅"/>
-    <meta http-equiv="mobile-agent" content="format=html5;url=http://m.zgncpw.com/index.php?moduleid=5&catid=13">
     <link rel="icon" type="image/x-icon" href="../pic/icon.png"/>
     <link rel="stylesheet" type="text/css"
           href="http://www.zgncpw.com/skin/skin2018/common/common.min.css?version=20180114"/>
     <link rel="stylesheet" type="text/css" href="../css/icon.min.css"/>
     <link rel="stylesheet" type="text/css"
-          href="http://www.zgncpw.com/skin/skin2018/pages/sell.min.css?version=20180114"/>
+          href="../css/sell.min.css"/>
+
+    <script type="text/javascript" src="../js/quote/jquery.js"></script>
+    <script type="text/javascript" src="../js/quote/comm.min.hs.js"></script>
+
+    <!--<script type="text/javascript" src="../js/quote/jquery.min.1.8.2.js"></script>-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script type="text/javascript" src="../js/my_store.js"></script>
 
 </head>
 <body>
-<div id="destoon_qrcode" style="display:none;"></div>
-<div class="public-top clearfix bg-top">
-    <div class="con-width-1200 drop-down-menu">
-    </div>
-</div>
-<div class="bg-white clearfix" id="lay0">
-    <div class="con-width-1200 public-menu pos-rel clearfix">
-        <a href="http://www.zgncpw.com/" class="fxl">
-            <img class="fxl logo" src="http://image.zgncpw.com:8000/zgncpw/201803/01/195531901.jpg" alt="农产品网"/>
-            <div class="fxl sub-logo b clearfix"><span>生鲜水果</span></div>
-        </a>
-        <img class="r-img pos-abs" src="http://www.zgncpw.com/skin/skin2018/image/sell/common/r_img.png" alt="农产品网"/>
-        <div class="fxl clearfix search_baidu_blank">
-            <script type="text/javascript">(function () {
-                document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));
-                var bdcs = document.createElement('script');
-                bdcs.type = 'text/javascript';
-                bdcs.async = true;
-                bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=8596138297126626144' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date() / 3600000);
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(bdcs, s);
-            })();</script>
+
+<div class="bg-gray-e clearfix">
+    <div class="con-width-1200 pos-rel top-sub clearfix">
+        <div class="fxl logo">
+            <a href="http://localhost:8080/agriculture/view/buyer.html">
+                <img class="r-img pos-abs" src="../pic/store.png" alt="农产品交易网"/>
+            </a>
+        </div>
+        <div id="uInfo" style="height: 100%;line-height: 84px;float: right;">
         </div>
     </div>
+</div>
+
+<div class="bg-information1 clearfix" id="lay1">
 </div>
 
 <style>
@@ -59,7 +56,6 @@
 
     /*.fixer{position:relative;}*/
     .pub-footer {
-        /*margin: 0px;*/
         padding: 0;
         background: #2d3237;
         color: #222;
@@ -89,33 +85,9 @@
         top: 72px;
     }
 
-    ul.li-list-informaition > li > a.catname {
-        display: none;
-    }
-
-    ul.li-list-informaition > li > a.catname {
-        display: block;
-    }
 </style>
-<div class="bg-information1 clearfix" id="lay1">
-    <div class="con-width-1200 pos-rel clearfix">
-        <h1>---生鲜水果供应网</h1>
-    </div>
-</div>
 <div class="clear h10"></div>
 <style>
-    .icon-nodata {
-        padding: 30px 0px 0px 240px !important
-    }
-
-    .icon-nodata > img.fxl {
-        border: 0px !important;
-    }
-
-    .tab-list {
-        padding: 0px 0px 0px 70px;
-    }
-
     .bg-information2 {
         padding-bottom: 40px;
         background-size: 100% 1400px;
@@ -132,65 +104,8 @@
         line-height: 24px;
     }
 </style>
-<div class="con-width-1200 clearfix">
-    当前位置：<a href="http://www.zgncpw.com/">首页</a> &raquo; <a href="http://www.zgncpw.com/sell/">供应信息</a> &raquo; <a
-        href="http://www.zgncpw.com/sell/list-13.html">生鲜水果</a>
-    <div class="clearline h20"></div>
-</div>
-<div class="clearfix con-width-1200 clearfix">
-    <div class="pad10 clearfix box-shadow-small bg-white">
-        <div class="tab-list auto select pos-rel clearfix" name="tablist">
-            <div class="tit pos-abs clearfix">
-                <i class="fxl iconfont-comm font-gray fs-16">&#xe81e;&nbsp;</i>
-                <h1 class="fxl">分类：</h1>
-            </div>
-            <a title="供应信息" class="text-wid-auto tooltip" href="/sell">
-                全部
-            </a>
-            <a title="生鲜水果" class="text-wid-auto tooltip one-13" href="http://www.zgncpw.com/sell/list-13.html">
-                生鲜水果 </a>
-            <a title="新鲜蔬菜" class="text-wid-auto tooltip one-9" href="http://www.zgncpw.com/sell/list-9.html">
-                新鲜蔬菜 </a>
-            <a title="畜牧水产" class="text-wid-auto tooltip one-16" href="http://www.zgncpw.com/sell/list-16.html">
-                畜牧水产 </a>
-            <a title="米面粮油" class="text-wid-auto tooltip one-6" href="http://www.zgncpw.com/sell/list-6.html">
-                米面粮油 </a>
-            <a title="农副产品" class="text-wid-auto tooltip one-202" href="http://www.zgncpw.com/sell/list-202.html">
-                农副产品 </a>
-            <a title="农资产品" class="text-wid-auto tooltip one-212" href="http://www.zgncpw.com/sell/list-212.html">
-                农资产品 </a>
-            <a title="花卉苗木" class="text-wid-auto tooltip one-17" href="http://www.zgncpw.com/sell/list-17.html">
-                花卉苗木 </a>
-            <a title="中草药材" class="text-wid-auto tooltip one-1123" href="http://www.zgncpw.com/sell/list-1123.html">
-                中草药材 </a>
-            <a title="农业机械" class="text-wid-auto tooltip one-706" href="http://www.zgncpw.com/sell/list-706.html">
-                农业机械 </a>
-            <a title="地方特产" class="text-wid-auto tooltip one-1693" href="http://www.zgncpw.com/sell/list-1693.html">
-                地方特产 </a>
-            <a title="民宿民居" class="text-wid-auto tooltip one-665" href="http://www.zgncpw.com/sell/list-665.html">
-                民宿民居 </a>
-            <a title="仓储物流" class="text-wid-auto tooltip one-707" href="http://www.zgncpw.com/sell/list-707.html">
-                仓储物流 </a>
-            <a title="农业文化" class="text-wid-auto tooltip one-44192" href="http://www.zgncpw.com/sell/list-44192.html">
-                农业文化 </a>
-            <a title="一村一品" class="text-wid-auto tooltip one-160158" href="http://www.zgncpw.com/sell/list-160158.html">
-                一村一品 </a>
-        </div>
-        <div class="clear h5"></div>
-        <div class="tab-list auto select pos-rel lay2 clearfix" name="tablist">
-            <div class="tit pos-abs clearfix">
-                <h1 class="fxl">&nbsp;</h1>
-            </div>
-            <div class="bg-gray clearfix" style="padding:5px 10px;">
-                <a title="草莓" class="text-wid-auto tooltip " href="http://www.zgncpw.com/sell/list-62.html">
-                    草莓 </a>
-            </div>
-        </div>
-        <div class="clear h5"></div>
-    </div>
-</div>
 <div class="send-sell clearfix">
-    <a href="/member/my.php?mid=5&action=add" target="_blank">
+    <a href="#" target="_blank">
         <img class="pos-abs" src="http://www.zgncpw.com/skin/skin2018/image/sell/common/send.png">
         <div class="con clearfix rad50">
             <i class="iconfont-comm rad100 fs-14">&#xe7a0;</i>
@@ -219,41 +134,10 @@
                     color: #FFFFFF;
                 }
             </style>
-            <ul class="li-list-informaition" name="liall4">
-                <li class="clearfix pos-rel my-checkbox big" id="item_117139">
-                    <a class="catname tit-bg-orange pos-abs" href="http://www.zgncpw.com/sell/list-778.html">樱桃</a><a
-                        href="http://www.zgncpw.com/sell/show/117139/" class="font-gray-5" target="_blank">
-                    <img class="big test" src="http://images.zgncpw.com/zgncpw_web/201805/18/2038495330295.jpg"
-                         alt="山东大樱桃批发 近期价格行情" onmouseover="img_tip(this, this.src);" onmouseout="img_tip(this, '');"/>
-                    <div class="pad-t-d-10 text-align-c clearfix">
-                        <h1 class="text-wid">山东大樱桃批发 近期价格行情</h1>
-                        <span class="fxl fs-16">面议</span>
-                        <i class="fxr zgncpwfont btn-meired line-height-20 rad3 pad5 font-white">&#xe7ca;</i>
-                    </div>
-                </a>
-                </li>
+            <ul id="sell_goods_list" class="li-list-informaition" name="liall4">
+
             </ul>
             <div class="clear"></div>
-            <div class="pages"><input type="hidden" id="destoon_previous"
-                                      value="http://www.zgncpw.com/sell/list-13-383.html"/><a
-                    href="http://www.zgncpw.com/sell/list-13-383.html">&nbsp;&#171;上一页&nbsp;</a>
-                <strong>&nbsp;1&nbsp;</strong> <a href="http://www.zgncpw.com/sell/list-13-2.html">&nbsp;2&nbsp;</a>
-                &nbsp;&#8230;&nbsp; <a href="http://www.zgncpw.com/sell/list-13-3.html">&nbsp;3&nbsp;</a> <a
-                        href="http://www.zgncpw.com/sell/list-13-4.html">&nbsp;4&nbsp;</a> <a
-                        href="http://www.zgncpw.com/sell/list-13-5.html">&nbsp;5&nbsp;</a> <a
-                        href="http://www.zgncpw.com/sell/list-13-6.html">&nbsp;6&nbsp;</a> <a
-                        href="http://www.zgncpw.com/sell/list-13-7.html">&nbsp;7&nbsp;</a> &nbsp;&#8230;&nbsp; <a
-                        href="http://www.zgncpw.com/sell/list-13-382.html">&nbsp;382&nbsp;</a> <a
-                        href="http://www.zgncpw.com/sell/list-13-383.html">&nbsp;383&nbsp;</a> <a
-                        href="http://www.zgncpw.com/sell/list-13-2.html">&nbsp;下一页&#187;&nbsp;
-                </a> <input type="hidden"
-                            id="destoon_next"
-                            value="http://www.zgncpw.com/sell/list-13-2.html"/>&nbsp;<cite>共7658条/383页</cite>&nbsp;<input
-                        type="text" class="pages_inp" id="destoon_pageno" value="1"
-                        onkeydown="if(event.keyCode==13 && this.value) {window.location.href='http://www.zgncpw.com/sell/list-13-{destoon_page}.html'.replace(/\{destoon_page\}/, this.value);return false;}">
-                <input type="button" class="pages_btn" value="GO"
-                       onclick="if(Dd('destoon_pageno').value>0)window.location.href='http://www.zgncpw.com/sell/list-13-{destoon_page}.html'.replace(/\{destoon_page\}/, Dd('destoon_pageno').value);"/>
-            </div>
         </div>
     </div>
 

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+        //这个 请选择 选项 加的很好。
+        var jiaArr = ["请选择","儒家", "佛家", "道家"];
+        var exampleArr = [
+            ["请选择"]
+        ];
+        window.onload = function () {
+
+            for(var j = 0; j < jiaArr.length; j++){
+                exampleArr[j] = new Array(j);
+                for(var k = 0; k < 2; k++){
+                    exampleArr[j][k] = k;
+                }
+            }
+            var selJia = document.getElementById("jia");
+            //申请空间
+            selJia.length = jiaArr.length;
+            //添加元素
+            for (var i = 0; i < jiaArr.length; i++) {
+                selJia.options[i].text = jiaArr[i];
+                selJia.options[i].value = jiaArr[i];
+            }
+        };
+
+        function ChangeExampleSelect(index)
+        {
+            var selExa = document.getElementById("example");
+
+            selExa.length = exampleArr[index].length;
+
+            for (var i = 0; i < exampleArr[index].length; i++)
+            {
+                selExa.options[i].text = exampleArr[index][i];
+                selExa.options[i].value = exampleArr[index][i];
+            }
+        }
+        function test() {
+            alert(document.getElementById("example").value);
+        }
+
+    </script>
+</head>
+<body>
+
+<select id="jia" onchange="ChangeExampleSelect(this.selectedIndex)">
+</select>
+<select id="example">
+</select>
+<button id="test" onclick="test()">test</button>
+
+</body>
+</html>

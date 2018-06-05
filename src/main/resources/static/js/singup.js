@@ -47,17 +47,17 @@ function register() {
     var email = $('#email').val();
 
     axios.get('/user/register', {
-        params: {
-            auth: auth,
-            name: userName,
-            password: password,
-            address: address,
-            realName: realName,
-            gender: gender,
-            phone: phone,
-            email: email
-        }
-    })
+            params: {
+                auth: auth,
+                name: userName,
+                password: password,
+                address: address,
+                realName: realName,
+                gender: gender,
+                phone: phone,
+                email: email
+            }
+        })
         .then(function (response) {
             var resData = response.data.data;
             if (resData == "注册成功") {
@@ -67,8 +67,10 @@ function register() {
                 if (auth == 3) {//买家
                     document.location = "http://localhost:8080/agriculture/view/buyer.html";
                 } else if (auth == 2) {//卖家
-
+                    document.location = "http://localhost:8080/agriculture/view/buyer.html";
                 } else if (auth == 1) {//专家
+
+                } else if (auth == 0) {//管理员
 
                 }
             } else {

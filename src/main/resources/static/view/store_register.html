@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>店铺开通 - 农产品交易网</title>
+    <link rel="icon" type="image/x-icon" href="../pic/icon.png"/>
+    <link rel="stylesheet" type="text/css" href="../css/register.css"/>
+
+    <script type="text/javascript" src="../js/quote/jquery.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+<form name='form1'>
+    <input type="hidden" name="do" value="reg"/>
+    <input type="hidden" name="ship" value="0"/>
+    <input type="hidden" name="reuid" value="1"/>
+    <div class="mw">
+        <div class="logo"><img src="../pic/logo.png" style="vertical-align:middle"><span
+                class="al">开通农产品交易网店铺</span></div>
+    </div>
+    <div class="main">
+        <table cellspacing="0" width="720" cellpadding="3" border="0" align="center" class="tbl">
+
+            <tr>
+                <th width="80">店铺名称</th>
+                <td width="290">
+                    <input type="text" id="txtUsername" name="userid" class="intxt" tabindex="1"
+                           placeholder="2-7个汉字或3-15个字母"/>
+                </td>
+                <td><p id="_userid"></p></td>
+            </tr>
+            <tr>
+                <th>发货地址</th>
+                <td>
+                    <input type="text" id="txtAddress" name="address" class="intxt" tabindex="1"
+                           placeholder="详细地址"/>
+                </td>
+            </tr>
+
+            <tr>
+                <th></th>
+                <td colspan="2"><input id="storeRegister" class="bt" type="button" value="提交，完成注册"></button>
+                    <p>&nbsp;</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</form>
+<div style="margin-top:20px; text-align:center; font-size:12px;">
+    <a href="http://localhost:8080/argiculture/index" target="_blank">环球农业网</a> &copy; 版权所有
+</div>
+
+<script type="text/javascript" src="../js/store_register.js"></script>
+
+</body>
+</html>

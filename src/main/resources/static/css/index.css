@@ -369,7 +369,7 @@ ul.sell-list-block li{float:left;display:inline-block;margin-right:11px;margin-b
 ul.sell-list-block li a{display:block;border:1px solid #CCCCCC;padding:5px 8px;}
 ul.sell-list-block li a:hover{color:#009966;border:1px solid #009966;}
 
-.sell-block{width:590px;height:450px;background:#f6f6f6;}
+.sell-block{width:85%;height:450px;background:#f6f6f6;}
 .sell-block .title{padding:20px;padding-bottom:0px;}
 .sell-block .title h1{font-size:16px;font-weight:bold;color:#009966;}
 li.list-catname-img{float:left;position:relative;width:180px;font-size:14px;line-height:40px;margin:0px 5px 10px 0px;}

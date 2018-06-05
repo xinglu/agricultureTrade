@@ -25,6 +25,7 @@ public class Goods implements Serializable {
 
     private String name;
     private String kindUid;
+    private String goodsPic;
     private Float sellTotalNum = 0f;
     private Integer hasDel = 0;
 
@@ -34,6 +35,20 @@ public class Goods implements Serializable {
     public Goods(String name, String kindUid) {
         this.name = name;
         this.kindUid = kindUid;
+    }
+
+    public Goods(String name, String kindUid, String goodsPic) {
+        this.name = name;
+        this.kindUid = kindUid;
+        this.goodsPic = goodsPic;
+    }
+
+    public String getGoodsPic() {
+        return goodsPic;
+    }
+
+    public void setGoodsPic(String goodsPic) {
+        this.goodsPic = goodsPic;
     }
 
     public Float getSellTotalNum() {

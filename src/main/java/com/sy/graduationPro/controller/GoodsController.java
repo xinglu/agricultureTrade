@@ -44,7 +44,7 @@ public class GoodsController {
             return ResponseMsg.fail("参数错误");
         }
         String resData = goodsService.getStoreName(userName);
-        if (resData == "当前用户不存在") {
+        if ("当前用户不存在".equals(resData) || "当前用户没有店铺".equals(resData)) {
             return ResponseMsg.fail(resData);
         }
         return ResponseMsg.success(resData);
@@ -52,7 +52,7 @@ public class GoodsController {
 
     @GetMapping("/get/all")
     @ResponseBody
-    public ResponseMsg getAllGoods(){
+    public ResponseMsg getAllGoods() {
 
         List<GoodsVO> res = goodsService.getAllGoods();
         return ResponseMsg.success(res, new OtherInfo(res.size()));

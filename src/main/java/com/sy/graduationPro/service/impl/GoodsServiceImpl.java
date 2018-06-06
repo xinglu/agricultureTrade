@@ -53,6 +53,9 @@ public class GoodsServiceImpl implements IGoodsService {
             return "当前用户不存在";
         }
         String storeName = storeDAO.findStoreName(user.getId());
+        if(storeName == null){
+            return "当前用户没有店铺";
+        }
         return storeName;
     }
 

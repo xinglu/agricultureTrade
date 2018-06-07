@@ -26,20 +26,22 @@ public class SellGoods implements Serializable {
     private String name;
     private Integer storeId;
     private Integer goodsId;
-    private Float price;
-    private Integer quantity;
+    private String price;
+    private String quantity;
+    private String sellNum;
     private String pic;
     private Integer hasCancel = 0;
 
     public SellGoods(){}
     public SellGoods(String name, Integer storeId, Integer goodsId,
-                     Float price, Integer quantity, String pic) {
+                     String price, String quantity, String sellNum, String pic) {
         this.name = name;
         this.storeId = storeId;
         this.goodsId = goodsId;
         this.price = price;
         this.quantity = quantity;
         this.pic = pic;
+        this.sellNum = sellNum;
     }
 
     public String getName() {
@@ -90,20 +92,28 @@ public class SellGoods implements Serializable {
         this.goodsId = goodsId;
     }
 
-    public Float getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(Float price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
-    public Integer getQuantity() {
+    public String getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(String quantity) {
         this.quantity = quantity;
+    }
+
+    public String getSellNum() {
+        return sellNum;
+    }
+
+    public void setSellNum(String sellNum) {
+        this.sellNum = sellNum;
     }
 
     public String getPic() {

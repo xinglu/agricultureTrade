@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购买商品</title>
+
+    <script type="text/javascript" src="../js/buy_goods.js"></script>
+</head>
+<body>
+<div id="transferContent">
+
+</div>
+
+<script type="text/javascript">
+    var content = document.getElementById("transferContent");
+    var data = window.location.search;
+    data = decodeURI(data.split('=')[1]);
+    content.innerHTML = data;
+</script>
+</body>
+</html>

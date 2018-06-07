@@ -12,7 +12,7 @@ function init() {
     var username = ReadCookie("name");
     var uInfo = document.getElementById('uInfo');
     uInfo.innerHTML = "<a href='#' >欢迎：" + username + "&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</a>" +
-        "<a id='logout' href='#'>退出</a>";
+        "<a id='logout' href='#' onclick='logout()'>退出</a>";
 }
 
 function initTitle(storename) {
@@ -124,4 +124,11 @@ function getGoodsOfStore() {
 
 function clickBtn(){
     document.location = "http://localhost:8080/agriculture/view/sell_goods.html";
+}
+
+function logout(){
+    SetCookie("name", "");
+    SetCookie("password", "");
+    var url = "http://localhost:8080/agriculture/index";
+    window.open(url, "_self");
 }

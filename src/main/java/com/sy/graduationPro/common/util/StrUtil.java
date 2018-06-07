@@ -3,11 +3,15 @@ package com.sy.graduationPro.common.util;
 import org.springframework.util.StringUtils;
 
 import java.util.UUID;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by sunguiyong on 2018/5/18.
  */
 public class StrUtil {
+
+    private static String regEx="[^0-9]";
 
     /**
      * 字符串判空
@@ -32,5 +36,11 @@ public class StrUtil {
      */
     public static String uuid() {
         return UUID.randomUUID().toString().replace("-", "").toUpperCase();
+    }
+
+    public static String getNumFromStr(String str){
+        Pattern p = Pattern.compile(regEx);
+        Matcher m = p.matcher(str);
+        return m.replaceAll("").trim();
     }
 }

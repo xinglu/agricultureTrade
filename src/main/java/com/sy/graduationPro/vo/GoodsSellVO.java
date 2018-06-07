@@ -7,17 +7,47 @@ import com.sy.graduationPro.bean.SellGoods;
  */
 public class GoodsSellVO {
 
+    private Integer goodsId;
+    private Integer storeId;
     private String sellName;
     private String price;
-    private Integer quantity;
+    private String quantity;
     private String pic;
     private String goodsName;
+    private String sellNum;
 
     public GoodsSellVO(SellGoods sellGoods) {
         this.sellName = sellGoods.getName();
-        this.price = sellGoods.getPrice().toString();
+        this.price = sellGoods.getPrice();
         this.quantity = sellGoods.getQuantity();
         this.pic = sellGoods.getPic();
+        this.sellNum = sellGoods.getSellNum();
+        this.goodsId = sellGoods.getGoodsId();
+        this.storeId = sellGoods.getStoreId();
+    }
+
+    public Integer getStoreId() {
+        return storeId;
+    }
+
+    public void setStoreId(Integer storeId) {
+        this.storeId = storeId;
+    }
+
+    public Integer getGoodsId() {
+        return goodsId;
+    }
+
+    public void setGoodsId(Integer goodsId) {
+        this.goodsId = goodsId;
+    }
+
+    public String getSellNum() {
+        return sellNum;
+    }
+
+    public void setSellNum(String sellNum) {
+        this.sellNum = sellNum;
     }
 
     public String getGoodsName() {
@@ -44,11 +74,11 @@ public class GoodsSellVO {
         this.price = price;
     }
 
-    public Integer getQuantity() {
+    public String getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
 

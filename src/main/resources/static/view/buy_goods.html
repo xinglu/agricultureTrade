@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <meta name="baidu-site-verification" content="xuKXK2l4cL"/>
+
+    <title>购买---农产品交易网</title>
+    <link rel="icon" type="image/x-icon" href="../pic/icon.png"/>
+
+    <link rel="stylesheet" href="../css/detail.css"/>
+    <link rel="stylesheet" href="../css/itemDetail.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/common.min.css"/>
+
+    <script type="text/javascript" src="../js/quote/jquery.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<!--from fragment-->
+<div id="site-nav" data-spm="a2226mz">
+    <div id="sn-bg">
+        <div class="sn-bg-right">
+        </div>
+    </div>
+    <div id="sn-bd">
+        <b class="sn-edge"></b>
+    </div>
+</div>
+
+<div class="con-width-1200 pos-rel top-sub clearfix">
+    <div class="fxl logo">
+        <a href="http://localhost:8080/agriculture/view/buyer.html">
+            <img class="logo-all fxl"
+                 src="../pic/logo.png"
+                 alt="农产品交易网"/>
+        </a>
+    </div>
+    <div id="uInfo" style="height: 100%;line-height: 84px;float: right;">
+    </div>
+</div>
+
+<div id="page">
+    <div id="content" data-cat="J_Cat" data-type="normal">
+        <div id="detail">
+            <div id="J_DetailMeta" class="tm-detail-meta tm-clear">
+                <div class="tm-clear">
+                    <div class="tb-property">
+                        <form action="/agriculture/sell/order" method="post" enctype="multipart/form-data"
+                              class="tb-wrap" id="myForm">
+                            <div class="tb-detail-hd">
+                                <!--<input data-spm="1000983" type="text" id="title" name="title" disabled style="border: none;" value="" />-->
+                                <input id="title" type="text" class="tb-text mui-amount-input" value="1"
+                                       name="title"
+                                       style="border: none;font-family: 华文行楷;font-size: 32px; text-align: center;width: 100%;"
+                                       readonly/>
+
+                                <input id="goodsId" type="hidden" class="tb-text mui-amount-input" value="1"
+                                       name="goodsId" readonly/>
+                                <input id="storeId" type="hidden" class="tb-text mui-amount-input" value="1"
+                                       name="storeId" readonly/>
+                                <input id="userName" type="hidden" class="tb-text mui-amount-input" value="1"
+                                       name="userName" readonly/>
+
+                            </div>
+                            <div class="tm-fcs-panel">
+                                <dl class="tm-price-panel" id="goods_price">
+                                    <dt class="tb-metatit">价格:</dt>
+                                    <input id="price" type="text" class="tb-text mui-amount-input" value="1545564644"
+                                           maxlength="8" name="price"
+                                           style="border: none; background-color: rgba(177, 177, 177, 0.12);width: 32%;" readonly/>
+                                </dl>
+                                <dl class="tm-price-panel" id="goods_sell_num">
+                                    <dt class="tb-metatit">销量:</dt>
+                                    <input id="sellNum" disabled style="border: none;" value="">
+                                    </input>
+                                </dl>
+                            </div>
+                            <div class="tb-key">
+                                <div class="tb-skin">
+                                    <div class="tb-sku">
+                                        <dl class="tb-amount tm-clear">
+                                            <dt class="tb-metatit">数量</dt>
+                                            <dd>
+                                                <span class="tb-amount-widget mui-amount-wrap">
+                                                    <input id="amount" type="text" class="tb-text mui-amount-input"
+                                                           value="1"
+                                                           maxlength="8" title="请输入购买量" name="count"/>
+                                                    <span class="mui-amount-unit" id="unit"></span>
+                                                </span>
+                                            </dd>
+                                        </dl>
+                                        <div class="tb-action tm-clear">
+                                            <div class="tb-btn-buy tb-btn-sku">
+                                                <input id="buyBtn" type="button" value="确认购买" rel="nofollow"
+                                                       style="background-color: #ff0036;border: 1px solid #ff0036;color: #fff;width: 180px;height: 40px;cursor: pointer"
+                                                       title="点击此按钮，到下一步确认购买信息。"/>
+                                            </div>
+                                            <div class="tb-btn-basket tb-btn-sku ">
+                                                <a href="#" rel="nofollow"
+                                                   id="cancelBtn" title="点击取消购买，返回上一页">取消购买</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--name: <input type="text" name="fname" />-->
+                            <!--<input type="file" name="pic" />-->
+                            <!--<input type="submit" value="提交" />-->
+                        </form>
+                    </div>
+                    <div data-spm="1997427645" class="tb-gallery">
+                        <div class="tb-booth">
+                            <a href="javascript:void(0);">
+                                <img id="J_ImgBooth" alt=""
+                                     src=""
+                                     data-hasZoom="700"/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pub-footer clearfix">
+    <style>
+        .down-img a img {
+            margin: 0px;
+        }
+    </style>
+    <div class="down clearfix">
+        Copyright © 2017 维贸网络 <span>版权所有</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="font-gray"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="http://www.miibeian.gov.cn" target="_blank">冀ICP备15003989号-2</a>&nbsp;&nbsp;&nbsp;&nbsp;<span
+            class="font-gray"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+        增值电信业务经营许可证：冀B2-20160010
+        &nbsp;&nbsp;&nbsp;&nbsp;<img src="http://image.zgncpw.com:8000/public/down/beian.png"/>冀公网安备
+        13102202000368号<span
+            class="font-gray"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+        <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cspan id='cnzz_stat_icon_1260742642'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260742642%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+    </div>
+</div>
+
+<script type="text/javascript" src="../js/buy_goods.js"></script>
+</body>
+</html>
+
+

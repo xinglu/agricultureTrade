@@ -48,6 +48,7 @@ $("#jia").click(function () {
 window.onload = function () {
     kind = [];
     kindLen = 0;
+    init();
     getKindsList();
 };
 
@@ -110,6 +111,10 @@ $("#submitBtn").click(function () {
     var goodsName = document.getElementById("example").value;
     var price = document.getElementById("price").value;
     var quantity = document.getElementById("totalQuantity").value;
+    var goodsUnit = document.getElementById("goodsUnit").value;
+
+    price = price +"/"+goodsUnit;
+    quantity = quantity+"("+goodsUnit+")";
 
     axios.get('/sell/add/sellGoods', {
         params: {
@@ -155,4 +160,23 @@ function uploadPic() {
             tr_test.innerHTML = "";
         }
     });
+}
+
+function init() {
+    var username = ReadCookie("name");
+    var uInfo = document.getElementById('uInfo');
+    if (username == "") {
+        uInfo.innerHTML = "<a href='../view/login.html' >登录&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</a>" +
+            "<a href='../view/register.html' >注册</a>";
+    } else {
+        uInfo.innerHTML = "<a href='../view/personal_center.html' >欢迎：" + username + "&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</a>" +
+            "<a id='logout' href='#' onclick='logout()'>退出</a>";
+    }
+}
+
+function logout(){
+    SetCookie("name", "");
+    SetCookie("password", "");
+    var url = "http://localhost:8080/agriculture/index";
+    window.open(url, "_self");
 }

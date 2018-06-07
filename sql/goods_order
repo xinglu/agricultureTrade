@@ -1,7 +1,7 @@
 SET FOREIGN_KEY_CHECKS = 0;
-DROP TABLE IF EXISTS `order`;
+DROP TABLE IF EXISTS `goodsOrder`;
 
-CREATE TABLE `order` (
+CREATE TABLE `goods_order` (
   `id`            INT(11)      NOT NULL AUTO_INCREMENT
   COMMENT '主键',
   `order_num`     VARCHAR(32)  NOT NULL

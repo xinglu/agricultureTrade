@@ -9,10 +9,11 @@ CREATE TABLE `sell_goods` (
   `name` varchar(255) not null COMMENT '出售商品的名字',
   `goods_id`    INT(11)    NOT NULL
   COMMENT '商品对应的id',
-  `price`       FLOAT      NOT NULL
-  COMMENT '商品价格',
-  `quantity`    INT        NOT NULL
-  COMMENT '商品数量',
+  `price`       varchar(16)      NOT NULL
+  COMMENT '商品每单位的价格',
+  `quantity`    varchar(16)        NOT NULL
+  COMMENT '商品数量,带单位说明',
+  `sell_num` varchar(16) default null COMMENT '商品卖出的数量',
   `pic`         LONGBLOB   NOT NULL
   COMMENT '商品对应的图片',
   `has_cancel`  TINYINT(1) NOT NULL DEFAULT 0

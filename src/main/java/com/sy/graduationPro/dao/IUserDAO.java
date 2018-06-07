@@ -31,4 +31,6 @@ public interface IUserDAO extends JpaRepository<User, Integer> {
     @Transactional(rollbackFor = Exception.class)
     void updateUserInfo(@Param("name") String name, @Param("address") String address, @Param("email") String email);
 
+    @Query("select u from User u where u.id=:id and u.hasDel = 0")
+    User findByid(@Param("id") Integer id);
 }

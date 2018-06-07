@@ -10,8 +10,8 @@ import java.util.Date;
  * Created by sunguiyong on 2018/5/16.
  */
 @Entity
-@Table(name = "order")
-public class Order implements Serializable {
+@Table(name = "goods_order")
+public class GoodsOrder implements Serializable {
     private static final long serialVersionUID = 1727823730034525974L;
 
     @Id
@@ -32,6 +32,20 @@ public class Order implements Serializable {
     private String receivingAdd;
     private String deliveryAdd;
     private Integer hasComplete = 0;
+
+    public GoodsOrder(String orderNum, Integer buyerId, Integer sellerId, Integer productId, Integer quantity,
+                      Float price, String receivingAdd, String deliveryAdd) {
+        this.orderNum = orderNum;
+        this.buyerId = buyerId;
+        this.sellerId = sellerId;
+        this.productId = productId;
+        this.quantity = quantity;
+        this.price = price;
+        this.receivingAdd = receivingAdd;
+        this.deliveryAdd = deliveryAdd;
+    }
+
+    public GoodsOrder(){}
 
     public Integer getId() {
         return id;

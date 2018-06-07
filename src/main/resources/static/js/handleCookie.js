@@ -8,7 +8,7 @@ function SetCookie(cookieName, cookieValue) {
     /*Cookie过期时间*/
     var expire = new Date();
     /*如果未设置nDays参数或者nDays为0，取默认值1*/
-    var nDays = 1;
+    var nDays = 0.05;
     /*计算Cookie过期时间*/
     expire.setTime(today.getTime() + 3600000 * 24 * nDays);
     /*设置Cookie值*/

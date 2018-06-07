@@ -35,11 +35,11 @@ function makeSurePageContent(kindName, goodsName) {
     }).then(function (response) {
         var data = response.data.data;
         var num = response.data.other.total;
-        setGoodsLIst(data, num);
+        setGoodsList(data, num);
     });
 }
 
-function setGoodsLIst(data, num) {
+function setGoodsList(data, num) {
     var goodsList = document.getElementById("sell_goods_list");
     var addButton = "<div style='width: 100%; height: 200px;'>" +
         "<img style='width: 100%;height: 195px' src='../pic/noData.png'>" +
@@ -48,10 +48,11 @@ function setGoodsLIst(data, num) {
         var html = "";
         for (var i = 0; i < data.length; i++) {
             html += "<li class='clearfix pos-rel my-checkbox big' id='item_117139'>" +
-                "<a class='catname tit-bg-orange pos-abs' onclick='clickGoods(\"" + data[i].goodsName + "\")' >" + data[i].goodsName + "</a><a " +
-                "href='http://www.zgncpw.com/sell/show/117139/' class='font-gray-5' target='_blank'>" +
+                "<a class='catname tit-bg-orange pos-abs' '>" + data[i].goodsName + "</a><a " +
+                " class='font-gray-5' target='_blank'>" +
                 "<img class='big test' src='" + data[i].pic + "' " +
-                "alt='' onmouseover='img_tip(this, this.src);' onmouseout='img_tip(this, '');'/>" +
+                "alt='' onclick='clickGoods(\"" + data[i].pic+ ","+ data[i].sellName + ","+ data[i].price + "," + 
+                data[i].sellNum+"," + data[i].goodsId + "," + data[i].storeId+ "\")'/>" +
                 "<div class='pad-t-d-10 text-align-c clearfix'>" +
                 "<h1 class='text-wid'>" + data[i].sellName + "</h1>" +
                 "<span class='fxl fs-16'>价钱：" + data[i].price + "</span>" +
@@ -81,10 +82,29 @@ function init() {
             "<a href='../view/register.html' >注册</a>";
     } else {
         uInfo.innerHTML = "<a href='../view/personal_center.html' >欢迎：" + username + "&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</a>" +
-            "<a id='logout' href='#'>退出</a>";
+            "<a id='logout' href='#' onclick='logout()'>退出</a>";
     }
 }
 
-function clickGoods(data) {
-    alert("test");
+function clickGoods(param) {
+    var url = "http://localhost:8080/agriculture/view/buy_goods.html?param="+
+        param;
+    url = encodeURI(url);
+    window.open(url, "_self");
 }
+
+function logout(){
+    SetCookie("name", "");
+    SetCookie("password", "");
+    var url = "http://localhost:8080/agriculture/index";
+    window.open(url, "_self");
+}
+
+$("#wantSell").click(function () {
+    var username = ReadCookie("name");
+    if(username == ""){
+        Toast("请先登录",2000);
+    }else{
+        window.open("http://localhost:8080/agriculture/view/sell_goods.html","_self")
+    }
+});

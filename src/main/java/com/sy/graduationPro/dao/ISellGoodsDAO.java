@@ -2,9 +2,11 @@ package com.sy.graduationPro.dao;
 
 import com.sy.graduationPro.bean.SellGoods;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -22,4 +24,9 @@ public interface ISellGoodsDAO extends JpaRepository<SellGoods, Integer> {
 
     @Query(value = "select * from sell_goods where goods_id in :gId and has_cancel = 0", nativeQuery = true)
     List<SellGoods> fetchByGoodsId(@Param("gId") List<Integer> goodsId);
+
+    @Query("update SellGoods sg set sg.sellNum=:sellNum where sg.id=:id and sg.hasCancel = 0")
+    @Modifying
+    @Transactional(rollbackFor = Exception.class)
+    void addSellNum(@Param("sellNum")String sellNum, @Param("id")Integer id);
 }

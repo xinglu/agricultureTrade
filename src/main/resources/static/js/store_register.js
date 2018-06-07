@@ -13,7 +13,6 @@ function clearInput() {
 }
 
 $('#storeRegister').click(function () {
-    alert("test");
     register();
 });
 

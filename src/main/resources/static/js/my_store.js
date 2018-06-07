@@ -57,7 +57,7 @@ function setSellGoodsList(data, num) {
         for(var i = 0; i< data.length; i++) {
              html += "<li class='clearfix pos-rel my-checkbox big' id='item_117139'>" +
                 "<a class='catname tit-bg-orange pos-abs' href='http://www.zgncpw.com/sell/list-778.html'>"+ data[i].goodsName +"</a><a " +
-                "href='http://www.zgncpw.com/sell/show/117139/' class='font-gray-5' target='_blank'>" +
+                "href='#' class='font-gray-5' target='_blank'>" +
                 "<img class='big test' src='"+ data[i].pic +"' " +
                 "alt='' onmouseover='img_tip(this, this.src);' onmouseout='img_tip(this, '');'/>" +
                 "<div class='pad-t-d-10 text-align-c clearfix'>" +
